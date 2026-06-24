@@ -26,7 +26,7 @@ export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
         <span className="text-[9px] uppercase tracking-widest text-gray-400 font-semibold">Korea Edition</span>
       </div>
       {/* Brand nav */}
-      <nav className="flex items-center justify-start gap-0 border-t border-gray-200 overflow-x-auto scrollbar-hide">
+      <nav className="flex items-center justify-start md:justify-center gap-0 border-t border-gray-200 overflow-x-auto scrollbar-hide">
         {lorelleBrands.map((b) => (
           b.available ? (
             <Link key={b.slug} to={`/brand/${b.slug}`}
