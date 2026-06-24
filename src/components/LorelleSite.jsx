@@ -26,7 +26,7 @@ export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
         <span className="text-[9px] uppercase tracking-widest text-gray-400 font-semibold">Korea Edition</span>
       </div>
       {/* Brand nav */}
-      <nav className="flex items-center justify-center gap-0 border-t border-gray-200 overflow-x-auto scrollbar-hide">
+      <nav className="flex items-center justify-start gap-0 border-t border-gray-200 overflow-x-auto scrollbar-hide">
         {lorelleBrands.map((b) => (
           b.available ? (
             <Link key={b.slug} to={`/brand/${b.slug}`}
@@ -553,7 +553,7 @@ export function BrandPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ minHeight: 'calc(100vh - 210px)' }}>
 
           {/* LEFT: Info */}
-          <div className="flex flex-col">
+          <div className="flex flex-col order-2 md:order-1">
             <h2 className="font-display text-5xl md:text-6xl text-vt-700 leading-none mb-2 uppercase">
               {product.nameEn}
             </h2>
@@ -609,7 +609,7 @@ export function BrandPage() {
           </div>
 
           {/* RIGHT: Image */}
-          <div className="relative overflow-hidden" style={{ minHeight: '480px' }}>
+          <div className="relative overflow-hidden order-1 md:order-2 min-h-[320px] md:min-h-[480px]">
             <img
               src={product.image}
               alt={product.nameEn}
