@@ -199,67 +199,15 @@ export function LorellCart({ open, onClose }) {
 export function HomePage() {
   return (
     <main className="bg-lorelle-100">
-      {/* PAGE 1 — Главная */}
+
+      {/* SECTION 1 — Почему у кореянок красивая кожа */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Left: text column */}
           <div className="md:col-span-2">
-            <h1 className="font-serif text-6xl md:text-7xl text-ink leading-none mb-4 uppercase">
-              Корейская<br />косметика<br />по честным<br />ценам
-            </h1>
-            <p className="font-editorial italic text-base text-gray-600 mb-4 leading-relaxed">
-              Оригинальный уход из Кореи<br />без лишних наценок и переплат
-            </p>
-            <div className="w-8 h-px bg-gray-400 mb-5" />
-            <div className="space-y-3 mag-body">
-              <p>Мы верим, что качественный уход за кожей должен быть доступным. Не из-за скидок, а благодаря честному подходу к делу.</p>
-              <p>Мы работаем напрямую с проверенными поставщиками в Корее и Вьетнаме, закупая оригинальную продукцию по ценам местного рынка.</p>
-              <p>В нашей стоимости нет наценок маркетплейсов, сетевых магазинов, дорогих торговых площадей и множества посредников.</p>
-              <p>Вы платите только за оригинальный продукт, доставку и логистику — и ничего лишнего.</p>
-              <p>Благодаря этому многие товары доступны по цене, максимально близкой к той, которую можно увидеть в магазинах Кореи.</p>
-            </div>
-            <p className="font-editorial italic text-base text-gray-500 mt-5">Красота из Кореи —<br />без переплат.</p>
-          </div>
-          {/* Right: images */}
-          <div className="md:col-span-3 flex flex-col gap-4">
-            <div className="flex-1 overflow-hidden" style={{ maxHeight: '340px' }}>
-              <img src="https://images.unsplash.com/photo-1614823498400-93bbff0d8b1f?w=800&h=600&fit=crop&crop=face" alt="Korean beauty" className="w-full h-full object-cover object-top" />
-            </div>
-            <div className="flex-shrink-0 overflow-hidden" style={{ height: '200px' }}>
-              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=400&fit=crop" alt="Korean skincare products" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
-        {/* Bottom row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mt-8 border border-gray-200">
-          <div className="relative overflow-hidden" style={{ height: '200px' }}>
-            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop" alt="Korea Beauty" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
-              <p className="font-display text-4xl text-white tracking-[0.3em]">KOREA</p>
-              <p className="font-display text-4xl text-white tracking-[0.3em]">BEAUTY</p>
-              <p className="text-[10px] text-white/60 uppercase tracking-widest mt-1">Seoul</p>
-            </div>
-          </div>
-          <div className="bg-white p-8 flex flex-col justify-center border-l border-gray-200">
-            <p className="font-serif text-2xl text-ink mb-3 leading-tight">Прямые поставки<br />из Кореи и Вьетнама</p>
-            <p className="mag-body mb-4">Мы регулярно посещаем производителей, контролируем качество и выбираем только те бренды, которым доверяем. Так мы можем предложить вам лучшее сочетание качества и цены.</p>
-            <div className="space-y-1">
-              {['Оригинальная продукция.', 'Проверенные бренды.', 'Честные цены.'].map(t => (
-                <p key={t} className="font-editorial italic text-sm text-gray-600">{t}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PAGE 2 — Почему у кореянок такая кожа */}
-      <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-10">
-          <div className="md:col-span-2">
-            <h2 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
+            <h1 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
               Почему<br />у кореянок<br />такая<br />красивая<br />кожа?
-            </h2>
-            <p className="mag-body mb-5">Многие считают, что секрет корейской кожи скрыт в одном дорогом креме. Но настоящая причина совсем в другом.</p>
+            </h1>
+            <p className="mag-body mb-5">Многие считают, что секрет корейской кожи скрыт в одном дорогом креме.<br />Но настоящая причина совсем в другом.</p>
             <div className="space-y-4">
               {[
                 'Красивая кожа — это результат системного ухода, где каждое средство выполняет свою задачу и усиливает действие следующего.',
@@ -272,13 +220,12 @@ export function HomePage() {
               ))}
             </div>
           </div>
-          <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '500px' }}>
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=1000&fit=crop&crop=face" alt="Korean skin" className="w-full h-full object-cover object-top" />
+          <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '540px' }}>
+            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=900&h=1100&fit=crop&crop=face&q=90" alt="Korean skin beauty" className="w-full h-full object-cover object-top" />
           </div>
         </div>
 
-        {/* Steps */}
-        <div className="border border-gray-200 bg-white p-8 mb-8">
+        <div className="border border-gray-200 bg-white p-8 mt-8 mb-8">
           <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-6">Корейский уход состоит из нескольких этапов</p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {[
@@ -299,28 +246,174 @@ export function HomePage() {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-200 pt-8">
-          <div>
-            <p className="mag-body mb-3">Каждый этап работает на общий результат: здоровую, увлажнённую и сияющую кожу. Когда средства подобраны правильно и используются регулярно, кожа начинает выглядеть заметно лучше уже через несколько недель.</p>
-          </div>
-          <div>
-            <p className="font-editorial italic text-lg text-gray-600 leading-relaxed">Красота кожи начинается не с одного крема. Она начинается с правильной системы ухода.</p>
-          </div>
+          <p className="mag-body">Каждый этап работает на общий результат: здоровую, увлажнённую и сияющую кожу. Когда средства подобраны правильно и используются регулярно, кожа начинает выглядеть заметно лучше уже через несколько недель.</p>
+          <p className="font-editorial italic text-lg text-gray-600 leading-relaxed">Красота кожи начинается не с одного крема. Она начинается с правильной системы ухода.</p>
         </div>
 
         <div className="mt-8">
           <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">Результат комплексного ухода</p>
           <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-            {['Глубокое увлажнение', 'Естественное сияние', 'Сильный защитный барьер', 'Ровная текстура и тон', 'Профилактика возрастных изменений'].map((r, i) => (
-              <div key={i} className="text-center p-4 border border-gray-200">
-                <div className="text-2xl mb-2">{['💧', '✨', '🛡', '🌊', '⏳'][i]}</div>
-                <p className="text-[10px] text-gray-600 leading-tight font-medium">{r}</p>
+            {[
+              { icon: '💧', label: 'Глубокое увлажнение' },
+              { icon: '✨', label: 'Естественное сияние' },
+              { icon: '🛡', label: 'Сильный защитный барьер' },
+              { icon: '🌊', label: 'Ровная текстура и тон' },
+              { icon: '⏳', label: 'Профилактика возрастных изменений' },
+            ].map(({ icon, label }) => (
+              <div key={label} className="text-center p-4 border border-gray-200">
+                <div className="text-2xl mb-2">{icon}</div>
+                <p className="text-[10px] text-gray-600 leading-tight font-medium">{label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* SECTION 2 — Вы оплачиваете косметику, а не чужие комиссии */}
+      <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="md:col-span-2 flex flex-col justify-center">
+            <h2 className="font-serif text-5xl md:text-6xl text-ink leading-tight mb-5">
+              Вы оплачиваете косметику,<br />а не чужие комиссии.
+            </h2>
+            <div className="space-y-3 mag-body">
+              <p>Сегодня стоимость товара часто определяется не только его качеством.</p>
+              <p>При покупке на крупных маркетплейсах в цену включены комиссии площадки, расходы на рекламу, логистику, хранение, обработку возвратов и другие операционные издержки продавца. Все эти расходы в конечном итоге отражаются на стоимости для покупателя.</p>
+              <p className="font-semibold text-ink">Мы выбрали другой путь.</p>
+              <p>Вместо длинной цепочки посредников мы закупаем оригинальную косметику напрямую у проверенных поставщиков в Корее и Вьетнаме и продаём её через собственный магазин.</p>
+              <p><strong>Поэтому вы оплачиваете прежде всего оригинальный продукт, а не многочисленные комиссии и дополнительные наценки.</strong></p>
+              <p className="font-editorial italic text-base text-gray-500 pt-1">Меньше посредников.<br />Больше ценности.</p>
+            </div>
+          </div>
+          <div className="md:col-span-3 flex flex-col gap-3">
+            <div className="overflow-hidden" style={{ height: '270px' }}>
+              <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&h=540&fit=crop&q=90" alt="Korean cosmetics store" className="w-full h-full object-cover" />
+            </div>
+            <div className="overflow-hidden" style={{ height: '230px' }}>
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&h=460&fit=crop&q=90" alt="Production quality control" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border border-gray-200 bg-white p-6">
+          <p className="text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">Цена на маркетплейсе</p>
+          <div className="flex flex-wrap items-start gap-2">
+            {[
+              { icon: '🏭', label: 'Производитель' },
+              { icon: '📦', label: 'Импортёр' },
+              { icon: '🚛', label: 'Дистрибьютор' },
+              { icon: '🛒', label: 'Маркетплейс' },
+              { icon: '📣', label: 'Реклама' },
+              { icon: '🏢', label: 'Логистика и хранение' },
+              { icon: '👤', label: 'Покупатель' },
+            ].map((step, i, arr) => (
+              <React.Fragment key={step.label}>
+                <div className="text-center">
+                  <div className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center mx-auto mb-1 text-base">{step.icon}</div>
+                  <p className="text-[9px] text-gray-500 leading-tight max-w-[58px]">{step.label}</p>
+                </div>
+                {i < arr.length - 1 && <span className="text-gray-300 text-sm mt-3">→</span>}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="border border-gray-200 bg-white p-6">
+            <p className="text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">Lorelle</p>
+            <div className="flex items-start gap-3">
+              {[{ icon: '🏭', label: 'Производитель' }, { icon: 'L', label: 'Lorelle' }, { icon: '👤', label: 'Покупатель' }].map((step, i, arr) => (
+                <React.Fragment key={step.label}>
+                  <div className="text-center">
+                    <div className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center mx-auto mb-1 text-sm font-bold text-ink">{step.icon}</div>
+                    <p className="text-[9px] text-gray-500">{step.label}</p>
+                  </div>
+                  {i < arr.length - 1 && <span className="text-gray-300 text-sm mt-3">→</span>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col justify-center p-2">
+            <p className="font-serif text-2xl text-ink mb-3 leading-tight">Прямая цепочка —<br />честная цена.</p>
+            <p className="mag-body">Мы работаем напрямую с проверенными поставщиками из Кореи и Вьетнама, поэтому стоимость наших товаров максимально отражает цену самого продукта, а не расходы многочисленных посредников.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-5">
+          {[
+            { icon: '⭐', text: 'Только оригинальная продукция' },
+            { icon: '🌏', text: 'Прямые поставки из Кореи и Вьетнама' },
+            { icon: '✓', text: 'Проверенные бренды и свежие поставки' },
+            { icon: '💬', text: 'Бесплатный подбор ухода и поддержка после покупки' },
+            { icon: '🏷', text: 'Честная цена без переплат за чужие комиссии' },
+          ].map(({ icon, text }) => (
+            <div key={text} className="flex gap-2 p-3 border border-gray-200 bg-white items-start">
+              <span className="text-base flex-shrink-0">{icon}</span>
+              <p className="text-[10px] text-gray-600 leading-tight">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3 — Бесплатный анализ кожи */}
+      <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="md:col-span-2">
+            <h2 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
+              Бесплатный<br />анализ<br />кожи
+            </h2>
+            <p className="mag-body mb-5">Загрузите фотографию лица анфас и получите подробный анализ состояния кожи с рекомендациями по уходу</p>
+            <div className="bg-lorelle-200 p-4 mb-6 flex items-center gap-3">
+              <span className="text-xl">🌿</span>
+              <p className="font-editorial italic text-base text-gray-600">Ваша кожа уникальна.<br />Уход должен быть персональным.</p>
+            </div>
+            <Link to="/skin-analysis" className="btn-secondary flex items-center gap-2 w-fit">
+              <Camera size={14} /> Пройти анализ кожи
+            </Link>
+          </div>
+          <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '520px' }}>
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&h=1100&fit=crop&crop=face&q=90" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-8">Что вы получите</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: '🔍', title: 'ОПРЕДЕЛЕНИЕ ТИПА КОЖИ', desc: 'Узнайте свой тип кожи и её особенности' },
+              { icon: '💧', title: 'ОЦЕНКА УРОВНЯ УВЛАЖНЕНИЯ', desc: 'Проверка уровня увлажнённости кожи' },
+              { icon: '🔬', title: 'АНАЛИЗ ПОР И ТЕКСТУРЫ', desc: 'Выявим особенности пор, рельефа и текстуры кожи' },
+              { icon: '🌡', title: 'ВЫЯВЛЕНИЕ ЧУВСТВИТЕЛЬНОСТИ', desc: 'Определим склонность к покраснениям и раздражениям' },
+              { icon: '🌅', title: 'РЕКОМЕНДАЦИИ ПО УТРЕННЕМУ УХОДУ', desc: 'Пошаговая схема ухода для защиты и сияния кожи' },
+              { icon: '🌙', title: 'РЕКОМЕНДАЦИИ ПО ВЕЧЕРНЕМУ УХОДУ', desc: 'Пошаговая схема ухода для восстановления кожи' },
+              { icon: '✨', title: 'ПОДБОР КОРЕЙСКОЙ КОСМЕТИКИ', desc: 'Индивидуальные рекомендации с подбором средств именно для вашей кожи' },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="text-center p-4 border border-gray-200 bg-white">
+                <div className="text-3xl mb-3">{icon}</div>
+                <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{title}</p>
+                <p className="text-[10px] text-gray-500 leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mt-8 border border-gray-200">
+          <div className="bg-lorelle-200 p-8 flex flex-col justify-between" style={{ minHeight: '260px' }}>
+            <div>
+              <h3 className="font-serif text-3xl text-ink mb-3">Готовые решения<br />для вашей кожи</h3>
+              <p className="mag-body mb-6">Мы уже собрали эффективные комплексы корейской косметики для разных типов кожи и задач. Вам остаётся только выбрать свой идеальный уход.</p>
+              <Link to="/brand/vt-cosmetics" className="btn-primary inline-flex items-center gap-2">
+                Подобрать свой уход <ArrowRight size={13} />
+              </Link>
+            </div>
+          </div>
+          <div className="overflow-hidden" style={{ minHeight: '260px' }}>
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&h=520&fit=crop&q=90" alt="Skincare products" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </section>
+
     </main>
   )
 }
