@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 import { ShoppingBag, Menu, X, ChevronLeft, ChevronRight, AlertCircle, Plus, Minus, Trash2, ArrowRight, Camera, Upload, CheckCircle } from 'lucide-react'
 import { useCart } from '../context/CartContext'
-import { lorelleBrands, vtProducts, shippingInfo } from '../data/products'
+import { lorelleBrands, vtProducts, anuaProducts, shippingInfo } from '../data/products'
 
 /* ─── LORELLE HEADER ─────────────────────────────────────────── */
 export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
@@ -202,8 +202,8 @@ export function HomePage() {
 
       {/* SECTION 1 — Почему у кореянок красивая кожа */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
             <h1 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
               Почему<br />у кореянок<br />такая<br />красивая<br />кожа?
             </h1>
@@ -220,8 +220,8 @@ export function HomePage() {
               ))}
             </div>
           </div>
-          <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '540px' }}>
-            <img src="/images/korean-skin.png" alt="Korean skin beauty" className="w-full h-full object-cover object-top" />
+          <div className="rounded-2xl overflow-hidden" style={{ minHeight: '320px' }}>
+            <img src="/images/korean-skin.png" alt="Korean skin beauty" className="w-full h-full object-cover" style={{ objectPosition: 'center 15%' }} />
           </div>
         </div>
 
@@ -358,28 +358,74 @@ export function HomePage() {
 
       {/* SECTION 3 — Бесплатный анализ кожи */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          <div className="md:col-span-2">
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+          <div>
             <h2 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
               Бесплатный<br />анализ<br />кожи
             </h2>
-            <p className="mag-body mb-5">Загрузите фотографию лица анфас и получите подробный анализ состояния кожи с рекомендациями по уходу</p>
-            <div className="bg-lorelle-200 p-4 mb-6 flex items-center gap-3">
+            <p className="mag-body max-w-md">Загрузите фотографию лица анфас и получите подробный анализ состояния кожи с рекомендациями по уходу</p>
+          </div>
+          <div className="flex flex-col gap-3 flex-shrink-0">
+            <div className="bg-lorelle-200 p-4 flex items-center gap-3">
               <span className="text-xl">🌿</span>
-              <p className="font-editorial italic text-base text-gray-600">Ваша кожа уникальна.<br />Уход должен быть персональным.</p>
+              <p className="font-editorial italic text-sm text-gray-600">Ваша кожа уникальна.<br />Уход должен быть персональным.</p>
             </div>
             <Link to="/skin-analysis" className="btn-secondary flex items-center gap-2 w-fit">
               <Camera size={14} /> Пройти анализ кожи
             </Link>
           </div>
-          <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '520px' }}>
-            <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
+        </div>
+
+        {/* Desktop: photo in center, 7 cards surrounding */}
+        <div className="hidden md:grid md:grid-cols-3 gap-4">
+          <div className="md:col-start-1 md:row-start-1 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">🔍</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ОПРЕДЕЛЕНИЕ ТИПА КОЖИ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Узнайте свой тип кожи и её особенности</p>
+          </div>
+          <div className="md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden">
+            <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-center" />
+          </div>
+          <div className="md:col-start-3 md:row-start-1 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">💧</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ОЦЕНКА УРОВНЯ УВЛАЖНЕНИЯ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Проверка уровня увлажнённости кожи</p>
+          </div>
+          <div className="md:col-start-1 md:row-start-2 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">🔬</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">АНАЛИЗ ПОР И ТЕКСТУРЫ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Выявим особенности пор, рельефа и текстуры кожи</p>
+          </div>
+          <div className="md:col-start-3 md:row-start-2 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">🌡</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ВЫЯВЛЕНИЕ ЧУВСТВИТЕЛЬНОСТИ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Определим склонность к покраснениям и раздражениям</p>
+          </div>
+          <div className="md:col-start-1 md:row-start-3 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">🌅</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">РЕКОМЕНДАЦИИ ПО УТРЕННЕМУ УХОДУ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Пошаговая схема ухода для защиты и сияния кожи</p>
+          </div>
+          <div className="md:col-start-2 md:row-start-3 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">🌙</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">РЕКОМЕНДАЦИИ ПО ВЕЧЕРНЕМУ УХОДУ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Пошаговая схема ухода для восстановления кожи</p>
+          </div>
+          <div className="md:col-start-3 md:row-start-3 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
+            <div className="text-3xl mb-3">✨</div>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ПОДБОР КОРЕЙСКОЙ КОСМЕТИКИ</p>
+            <p className="text-[10px] text-gray-500 leading-snug">Индивидуальные рекомендации с подбором средств именно для вашей кожи</p>
           </div>
         </div>
 
-        <div className="mt-10">
-          <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-8">Что вы получите</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Mobile: photo + cards grid */}
+        <div className="md:hidden">
+          <div className="rounded-3xl overflow-hidden mb-6" style={{ aspectRatio: '3/4' }}>
+            <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-center" />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
             {[
               { icon: '🔍', title: 'ОПРЕДЕЛЕНИЕ ТИПА КОЖИ', desc: 'Узнайте свой тип кожи и её особенности' },
               { icon: '💧', title: 'ОЦЕНКА УРОВНЯ УВЛАЖНЕНИЯ', desc: 'Проверка уровня увлажнённости кожи' },
@@ -390,8 +436,8 @@ export function HomePage() {
               { icon: '✨', title: 'ПОДБОР КОРЕЙСКОЙ КОСМЕТИКИ', desc: 'Индивидуальные рекомендации с подбором средств именно для вашей кожи' },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="text-center p-4 border border-gray-200 bg-white">
-                <div className="text-3xl mb-3">{icon}</div>
-                <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{title}</p>
+                <div className="text-2xl mb-2">{icon}</div>
+                <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-1 leading-tight">{title}</p>
                 <p className="text-[10px] text-gray-500 leading-snug">{desc}</p>
               </div>
             ))}
@@ -483,8 +529,10 @@ export function SkinAnalysisPage() {
               <Camera size={14} /> Пройти анализ кожи
             </button>
           </div>
-          <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '480px' }}>
-            <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
+          <div className="md:col-span-3 flex items-start justify-center">
+            <div className="rounded-3xl overflow-hidden w-4/5" style={{ aspectRatio: '3/4' }}>
+              <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-center" />
+            </div>
           </div>
         </div>
       </section>
@@ -574,7 +622,13 @@ export function BrandPage() {
   const { addItem } = useCart()
   const [pageIdx, setPageIdx] = useState(0)
   const [added, setAdded] = useState(null)
-  const total = vtProducts.length
+  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts }
+  const allProducts = brandProductMap[slug]
+  const total = allProducts?.length ?? 0
+
+  useEffect(() => {
+    setPageIdx(0)
+  }, [slug])
 
   useEffect(() => {
     const handler = (e) => {
@@ -585,7 +639,7 @@ export function BrandPage() {
     return () => window.removeEventListener('keydown', handler)
   }, [total])
 
-  if (slug !== 'vt-cosmetics') {
+  if (!allProducts) {
     return (
       <div className="max-w-7xl mx-auto px-6 py-20 text-center bg-lorelle-100 min-h-screen">
         <p className="font-display text-6xl text-ink mb-4">{lorelleBrands.find(b => b.slug === slug)?.name || 'Бренд'}</p>
@@ -595,7 +649,7 @@ export function BrandPage() {
     )
   }
 
-  const product = vtProducts[pageIdx]
+  const product = allProducts[pageIdx]
 
   const handleAdd = () => {
     addItem(product)
@@ -628,7 +682,7 @@ export function BrandPage() {
 
       {/* Page dots */}
       <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
-        {vtProducts.map((p, i) => (
+        {allProducts.map((p, i) => (
           <button
             key={p.id}
             onClick={() => setPageIdx(i)}
@@ -641,7 +695,7 @@ export function BrandPage() {
 
       {/* Product page — key change triggers fade-in re-mount */}
       <div key={product.id} className="max-w-7xl mx-auto px-10 md:px-16 py-6 animate-fade-in">
-        <p className="mag-label mb-3">VT Cosmetics · {product.line}</p>
+        <p className="mag-label mb-3">{product.brand} · {product.line}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ minHeight: 'calc(100vh - 210px)' }}>
 
@@ -710,8 +764,8 @@ export function BrandPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
-              <span className="font-display text-xl text-white tracking-widest opacity-60">PDRN</span>
-              <span className="text-[9px] uppercase tracking-widest text-white/50">VT COSMETICS · KOREA</span>
+              <span className="font-display text-xl text-white tracking-widest opacity-60">{product.line}</span>
+              <span className="text-[9px] uppercase tracking-widest text-white/50">{product.brand.toUpperCase()} · KOREA</span>
             </div>
             <div className="absolute top-4 right-4 bg-white/90 px-3 py-1">
               <span className="text-[9px] uppercase tracking-widest font-semibold text-vt-700">
