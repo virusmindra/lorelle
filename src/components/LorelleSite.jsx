@@ -221,7 +221,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '540px' }}>
-            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=900&h=1100&fit=crop&crop=face&q=90" alt="Korean skin beauty" className="w-full h-full object-cover object-top" />
+            <img src="/images/korean-skin.png" alt="Korean skin beauty" className="w-full h-full object-cover object-top" />
           </div>
         </div>
 
@@ -373,7 +373,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '520px' }}>
-            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&h=1100&fit=crop&crop=face&q=90" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
+            <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
           </div>
         </div>
 
@@ -484,7 +484,7 @@ export function SkinAnalysisPage() {
             </button>
           </div>
           <div className="md:col-span-3 overflow-hidden" style={{ maxHeight: '480px' }}>
-            <img src="https://images.unsplash.com/photo-1601455763557-db1bea8a9a5a?w=800&h=900&fit=crop&crop=face" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
+            <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-top" />
           </div>
         </div>
       </section>
