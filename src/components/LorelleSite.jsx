@@ -649,7 +649,8 @@ export function BrandPage() {
     )
   }
 
-  const product = allProducts[pageIdx]
+  const safeIdx = Math.min(pageIdx, total - 1)
+  const product = allProducts[safeIdx]
 
   const handleAdd = () => {
     addItem(product)
@@ -687,7 +688,7 @@ export function BrandPage() {
             key={p.id}
             onClick={() => setPageIdx(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === pageIdx ? 'bg-ink w-6' : 'bg-gray-300 w-1.5 hover:bg-gray-500'
+              i === safeIdx ? 'bg-ink w-6' : 'bg-gray-300 w-1.5 hover:bg-gray-500'
             }`}
           />
         ))}
@@ -769,7 +770,7 @@ export function BrandPage() {
             </div>
             <div className="absolute top-4 right-4 bg-white/90 px-3 py-1">
               <span className="text-[9px] uppercase tracking-widest font-semibold text-vt-700">
-                {String(pageIdx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                {String(safeIdx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
               </span>
             </div>
           </div>
