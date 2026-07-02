@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 import { ShoppingBag, Menu, X, ChevronLeft, ChevronRight, AlertCircle, Plus, Minus, Trash2, ArrowRight, Camera, Upload, CheckCircle } from 'lucide-react'
 import { useCart } from '../context/CartContext'
-import { lorelleBrands, vtProducts, anuaProducts, shippingInfo } from '../data/products'
+import { lorelleBrands, vtProducts, anuaProducts, medicubeProducts, maryMayProducts, shippingInfo } from '../data/products'
 
 /* ─── LORELLE HEADER ─────────────────────────────────────────── */
 export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
@@ -622,7 +622,7 @@ export function BrandPage() {
   const { addItem } = useCart()
   const [pageIdx, setPageIdx] = useState(0)
   const [added, setAdded] = useState(null)
-  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts }
+  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts, 'medicube': medicubeProducts, 'mary-may': maryMayProducts }
   const allProducts = brandProductMap[slug]
   const total = allProducts?.length ?? 0
 
