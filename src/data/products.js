@@ -7,7 +7,7 @@ export const lorelleBrands = [
   { slug: 'vt-cosmetics',      label: ['VT', 'COSMETICS'],    name: 'VT Cosmetics',       available: true  },
   { slug: 'anua',              label: ['Anua'],                name: 'Anua',               available: true  },
   { slug: 'mary-may',          label: ['MÁRY & MAY'],          name: 'MÁRY & MAY',         available: true  },
-  { slug: 'skin1004',         label: ['SKIN1004'],             name: 'SKIN1004',            available: true  },
+  { slug: 'skin1004',         label: ['CENTELLA'],            name: 'CENTELLA',            available: true  },
   { slug: 'medicube',          label: ['medicube'],            name: 'medicube',           available: true  },
   { slug: 'fino',              label: ['Fino'],                name: 'Fino',               available: true  },
   { slug: 'maxcare',           label: ['MAXCARE', 'V-PRO'],    name: 'MAXCARE V-PRO',      available: true  },
@@ -589,10 +589,10 @@ export const medicubeProducts = [
   },
 ]
 
-export const skin1004Products = [
+export const centellaProducts = [
   {
     id: 'skin1004-madagascar-centella-ampoule',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA',
     nameEn: 'MADAGASCAR CENTELLA AMPOULE',
     nameRu: 'АМПУЛЬНАЯ СЫВОРОТКА С ЭКСТРАКТОМ ЦЕНТЕЛЛЫ АЗИАТСКОЙ',
@@ -612,7 +612,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-ampoule-foam',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA',
     nameEn: 'MADAGASCAR CENTELLA AMPOULE FOAM',
     nameRu: 'ОЧИЩАЮЩАЯ ПЕНКА С ЭКСТРАКТОМ ЦЕНТЕЛЛЫ АЗИАТСКОЙ',
@@ -632,7 +632,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-light-cleansing-oil',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA',
     nameEn: 'MADAGASCAR CENTELLA LIGHT CLEANSING OIL',
     nameRu: 'ГИДРОФИЛЬНОЕ МАСЛО С ЭКСТРАКТОМ ЦЕНТЕЛЛЫ АЗИАТСКОЙ',
@@ -652,7 +652,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-toning-toner',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA',
     nameEn: 'MADAGASCAR CENTELLA TONING TONER',
     nameRu: 'УВЛАЖНЯЮЩИЙ И ТОНИЗИРУЮЩИЙ ТОНЕР С ЭКСТРАКТОМ ЦЕНТЕЛЛЫ АЗИАТСКОЙ',
@@ -672,7 +672,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-soothing-cream',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA',
     nameEn: 'MADAGASCAR CENTELLA SOOTHING CREAM',
     nameRu: 'УСПОКАИВАЮЩИЙ КРЕМ С ЭКСТРАКТОМ ЦЕНТЕЛЛЫ АЗИАТСКОЙ',
@@ -692,7 +692,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-quick-calming-pad',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA',
     nameEn: 'MADAGASCAR CENTELLA QUICK CALMING PAD',
     nameRu: 'УСПОКАИВАЮЩИЕ ПЭДЫ С ЭКСТРАКТОМ ЦЕНТЕЛЛЫ АЗИАТСКОЙ',
@@ -712,7 +712,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-probio-cica-intensive-ampoule',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA PROBIO-CICA',
     nameEn: 'MADAGASCAR CENTELLA PROBIO-CICA INTENSIVE AMPOULE',
     nameRu: 'ИНТЕНСИВНАЯ АМПУЛЬНАЯ СЫВОРОТКА С ПРОБИОТИКАМИ И ЦЕНТЕЛЛОЙ',
@@ -733,7 +733,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tone-brightening-cleansing-gel-foam',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TONE BRIGHTENING',
     nameEn: 'MADAGASCAR CENTELLA TONE BRIGHTENING CLEANSING GEL FOAM',
     nameRu: 'ОСВЕТЛЯЮЩАЯ ГЕЛЬ-ПЕНКА ДЛЯ УМЫВАНИЯ С ЦЕНТЕЛЛОЙ',
@@ -754,7 +754,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tone-brightening-boosting-toner',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TONE BRIGHTENING',
     nameEn: 'MADAGASCAR CENTELLA TONE BRIGHTENING BOOSTING TONER',
     nameRu: 'ОСВЕТЛЯЮЩИЙ ТОНЕР С ЦЕНТЕЛЛОЙ',
@@ -775,7 +775,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tone-brightening-capsule-ampoule',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TONE BRIGHTENING',
     nameEn: 'MADAGASCAR CENTELLA TONE BRIGHTENING CAPSULE AMPOULE',
     nameRu: 'ОСВЕТЛЯЮЩАЯ СЫВОРОТКА С КАПСУЛАМИ ЦЕНТЕЛЛЫ',
@@ -796,7 +796,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tone-brightening-capsule-cream',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TONE BRIGHTENING',
     nameEn: 'MADAGASCAR CENTELLA TONE BRIGHTENING CAPSULE CREAM',
     nameRu: 'ОСВЕТЛЯЮЩИЙ КРЕМ С КАПСУЛАМИ ЦЕНТЕЛЛЫ',
@@ -817,7 +817,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tone-brightening-tone-up-sunscreen',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TONE BRIGHTENING',
     nameEn: 'MADAGASCAR CENTELLA TONE BRIGHTENING TONE-UP SUNSCREEN SPF50+ PA++++',
     nameRu: 'ОСВЕТЛЯЮЩИЙ СОЛНЦЕЗАЩИТНЫЙ КРЕМ С ТОНИРУЮЩИМ ЭФФЕКТОМ',
@@ -838,7 +838,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tea-trica-spot-cream',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TEA-TRICA',
     nameEn: 'MADAGASCAR CENTELLA TEA-TRICA SPOT CREAM',
     nameRu: 'ЛОКАЛЬНЫЙ КРЕМ ПРОТИВ НЕСОВЕРШЕНСТВ С ЦЕНТЕЛЛОЙ И ЧАЙНЫМ ДЕРЕВОМ',
@@ -858,7 +858,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tea-trica-purifying-toner',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TEA-TRICA',
     nameEn: 'MADAGASCAR CENTELLA TEA-TRICA PURIFYING TONER',
     nameRu: 'ОЧИЩАЮЩИЙ ТОНЕР С ЦЕНТЕЛЛОЙ И ЧАЙНЫМ ДЕРЕВОМ',
@@ -878,7 +878,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tea-trica-relief-ampoule',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TEA-TRICA',
     nameEn: 'MADAGASCAR CENTELLA TEA-TRICA RELIEF AMPOULE',
     nameRu: 'СЫВОРОТКА АНТИ-АКНЕ С ЦЕНТЕЛЛОЙ И ЧАЙНЫМ ДЕРЕВОМ',
@@ -898,7 +898,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tea-trica-bha-foam',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TEA-TRICA',
     nameEn: 'MADAGASCAR CENTELLA TEA-TRICA BHA FOAM',
     nameRu: 'ОЧИЩАЮЩАЯ ПЕНКА С BHA, ЦЕНТЕЛЛОЙ И ЧАЙНЫМ ДЕРЕВОМ',
@@ -918,7 +918,7 @@ export const skin1004Products = [
   },
   {
     id: 'skin1004-madagascar-centella-tea-trica-relaxing-mask',
-    brand: 'SKIN1004',
+    brand: 'CENTELLA',
     line: 'MADAGASCAR CENTELLA TEA-TRICA',
     nameEn: 'MADAGASCAR CENTELLA TEA-TRICA RELAXING MASK',
     nameRu: 'УСПОКАИВАЮЩАЯ ТКАНЕВАЯ МАСКА С ЦЕНТЕЛЛОЙ И ЧАЙНЫМ ДЕРЕВОМ',
