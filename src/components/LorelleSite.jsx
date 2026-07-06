@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 import { ShoppingBag, Menu, X, ChevronLeft, ChevronRight, AlertCircle, Plus, Minus, Trash2, ArrowRight, Camera, Upload, CheckCircle } from 'lucide-react'
 import { useCart } from '../context/CartContext'
-import { lorelleBrands, vtProducts, anuaProducts, medicubeProducts, maryMayProducts, shippingInfo } from '../data/products'
+import { lorelleBrands, vtProducts, anuaProducts, medicubeProducts, maryMayProducts, finoProducts, shippingInfo } from '../data/products'
 
 /* ─── LORELLE HEADER ─────────────────────────────────────────── */
 export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
@@ -622,7 +622,7 @@ export function BrandPage() {
   const { addItem } = useCart()
   const [pageIdx, setPageIdx] = useState(0)
   const [added, setAdded] = useState(null)
-  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts, 'medicube': medicubeProducts, 'mary-may': maryMayProducts }
+  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts, 'medicube': medicubeProducts, 'mary-may': maryMayProducts, 'fino': finoProducts }
   const allProducts = brandProductMap[slug]
   const total = allProducts?.length ?? 0
 
@@ -757,17 +757,12 @@ export function BrandPage() {
           </div>
 
           {/* RIGHT: Image */}
-          <div className="relative overflow-hidden order-1 md:order-2 min-h-[320px] md:min-h-[480px]">
+          <div className="relative overflow-hidden order-1 md:order-2 min-h-[320px] md:min-h-[480px] bg-lorelle-200">
             <img
               src={product.image}
               alt={product.nameEn}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-contain"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
-              <span className="font-display text-xl text-white tracking-widest opacity-60">{product.line}</span>
-              <span className="text-[9px] uppercase tracking-widest text-white/50">{product.brand.toUpperCase()} · KOREA</span>
-            </div>
             <div className="absolute top-4 right-4 bg-white/90 px-3 py-1">
               <span className="text-[9px] uppercase tracking-widest font-semibold text-vt-700">
                 {String(safeIdx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}

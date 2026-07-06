@@ -9,7 +9,7 @@ export const lorelleBrands = [
   { slug: 'mary-may',          label: ['MÁRY & MAY'],          name: 'MÁRY & MAY',         available: true  },
   { slug: 'beauty-of-joseon',  label: ['Beauty of', 'Joseon'], name: 'Beauty of Joseon',   available: false },
   { slug: 'medicube',          label: ['medicube'],            name: 'medicube',           available: true  },
-  { slug: 'fino',              label: ['Fino'],                name: 'Fino',               available: false },
+  { slug: 'fino',              label: ['Fino'],                name: 'Fino',               available: true  },
   { slug: 'maxcare',           label: ['MAXCARE', 'V-PRO'],    name: 'MAXCARE V-PRO',      available: false },
 ]
 
@@ -586,6 +586,30 @@ export const medicubeProducts = [
     ],
     ingredients: ['Комплекс AHA + BHA + PHA + LHA (32%)', 'Ниацинамид', 'Янтарная кислота'],
     skinTypes: ['Проблемная кожа тела', 'Кожа с высыпаниями и постакне', 'Жирная и комбинированная кожа', 'Шероховатая кожа', 'Для спины, груди и плеч'],
+  },
+]
+
+export const finoProducts = [
+  {
+    id: 'fino-premium-touch-shampoo',
+    brand: 'Fino',
+    line: 'PREMIUM TOUCH',
+    nameEn: 'PREMIUM TOUCH SHAMPOO',
+    nameRu: 'ПРЕМИАЛЬНЫЙ ШАМПУНЬ ДЛЯ ВОЛОС',
+    subtitle: 'Интенсивный шампунь с ухаживающей формулой Beauty Serum',
+    volume: '550 мл',
+    price: 1800,
+    image: '/images/fino-premium-touch-shampoo.jpg',
+    accentColor: '#8b7355',
+    description: 'Интенсивный шампунь с ухаживающей формулой Beauty Serum эффективно очищает волосы и кожу головы, удаляя загрязнения и излишки себума без пересушивания. Делает волосы мягкими, гладкими и блестящими, облегчает расчесывание и помогает сохранить их естественную красоту.',
+    benefits: [
+      { icon: '🫧', title: 'ГЛУБОКОЕ ОЧИЩЕНИЕ',      desc: 'Мягкая очищающая формула бережно удаляет загрязнения, остатки стайлинга и излишки кожного себума, сохраняя комфорт кожи головы и ощущение свежести.' },
+      { icon: '💧', title: 'ВОССТАНОВЛЕНИЕ И ПИТАНИЕ', desc: 'Комплекс Beauty Serum насыщает волосы влагой и питательными компонентами, уменьшает сухость, ломкость и помогает восстановить поврежденную структуру волос.' },
+      { icon: '✨', title: 'ГЛАДКОСТЬ И БЛЕСК',       desc: 'Разглаживает кутикулу волос, уменьшает пушистость, придает шелковистость и здоровое сияние без утяжеления.' },
+      { icon: '🌟', title: 'ДЛЯ КАКИХ ВОЛОС',         desc: 'Сухие и поврежденные, окрашшенные и осветленные, тусклые и непослушные волосы. Для ежедневного использования.' },
+    ],
+    ingredients: ['Beauty Serum комплекс', 'Увлажняющие компоненты', 'Питательные масла'],
+    skinTypes: ['Сухие и поврежденные волосы', 'Окрашенные и осветленные волосы', 'Тусклые и непослушные волосы', 'Для ежедневного использования'],
   },
 ]
 
