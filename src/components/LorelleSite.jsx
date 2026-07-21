@@ -2,10 +2,13 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom'
 import { ShoppingBag, Menu, X, ChevronLeft, ChevronRight, AlertCircle, Plus, Minus, Trash2, ArrowRight, Camera, Upload, CheckCircle } from 'lucide-react'
 import { useCart } from '../context/CartContext'
-import { lorelleBrands, vtProducts, anuaProducts, medicubeProducts, maryMayProducts, finoProducts, maxcareProducts, centellaProducts, shippingInfo } from '../data/products'
+import { useLanguage } from '../context/LanguageContext'
+import { lorelleBrands, vtProducts, anuaProducts, medicubeProducts, maryMayProducts, finoProducts, centellaProducts, shippingInfo } from '../data/products'
 
 /* ─── LORELLE HEADER ─────────────────────────────────────────── */
 export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
+  const { language, toggleLanguage } = useLanguage()
+  
   return (
     <header className="sticky top-0 z-40 bg-lorelle-100 border-b border-gray-300">
       {/* Top row */}
@@ -16,9 +19,14 @@ export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
         <Link to="/" className="font-serif font-black tracking-[0.18em] text-4xl md:text-5xl text-ink leading-none select-none">
           LORELLE
         </Link>
-        <button onClick={onCartOpen} className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-gray-500 hover:text-ink transition-colors">
-          <ShoppingBag size={15} /> <span className="hidden sm:inline">Корзина</span>
-        </button>
+        <div className="flex items-center gap-4">
+          <button onClick={toggleLanguage} className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-gray-500 hover:text-ink transition-colors">
+            {language === 'ua' ? 'UA' : 'EN'}
+          </button>
+          <button onClick={onCartOpen} className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-gray-500 hover:text-ink transition-colors">
+            <ShoppingBag size={15} /> <span className="hidden sm:inline">Корзина</span>
+          </button>
+        </div>
       </div>
       {/* Sub labels row */}
       <div className="flex items-center justify-between px-6 py-1">
@@ -83,15 +91,16 @@ export function SideMenu({ open, onClose }) {
 }
 
 /* ─── CART ───────────────────────────────────────────────────── */
-const MIN_ORDER = 14000
 export function LorellCart({ open, onClose }) {
   const { items, totalPrice, totalQty, removeItem, updateQty, clearCart } = useCart()
+  const { language, convertPrice, getCurrencySymbol } = useLanguage()
   const [showMin, setShowMin] = useState(false)
   const navigate = useNavigate()
-  const freeAt = shippingInfo.freeThreshold
+  const freeAt = convertPrice(shippingInfo.freeThreshold)
+  const minOrder = convertPrice(14000)
 
   const handleCheckout = () => {
-    if (totalPrice < MIN_ORDER) { setShowMin(true); return }
+    if (totalPrice < minOrder) { setShowMin(true); return }
     onClose(); navigate('/checkout')
   }
 
@@ -102,8 +111,8 @@ export function LorellCart({ open, onClose }) {
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200">
           <div className="flex items-center gap-3">
             <ShoppingBag size={18} className="text-vt-700" />
-            <span className="font-serif font-bold text-xl text-ink">Корзина</span>
-            {totalQty > 0 && <span className="text-[10px] bg-vt-100 text-vt-700 font-bold px-2 py-0.5 uppercase tracking-wider">{totalQty} шт</span>}
+            <span className="font-serif font-bold text-xl text-ink">{language === 'ua' ? 'Кошик' : 'Cart'}</span>
+            {totalQty > 0 && <span className="text-[10px] bg-vt-100 text-vt-700 font-bold px-2 py-0.5 uppercase tracking-wider">{totalQty} {language === 'ua' ? 'шт' : 'items'}</span>}
           </div>
           <button onClick={onClose}><X size={18} className="text-gray-400" /></button>
         </div>
@@ -111,8 +120,8 @@ export function LorellCart({ open, onClose }) {
         {totalQty > 0 && (
           <div className="px-6 py-2 bg-vt-50 border-b border-vt-100">
             {totalPrice < freeAt
-              ? <p className="text-[11px] text-vt-700">До бесплатной доставки: <strong>{(freeAt - totalPrice).toLocaleString('ru-RU')} ₽</strong></p>
-              : <p className="text-[11px] text-vt-700 font-semibold">✓ Бесплатная доставка активирована</p>
+              ? <p className="text-[11px] text-vt-700">{language === 'ua' ? 'До безкоштовної доставки:' : 'To free shipping:'} <strong>{(freeAt - totalPrice).toLocaleString()}{getCurrencySymbol()}</strong></p>
+              : <p className="text-[11px] text-vt-700 font-semibold">{language === 'ua' ? '✓ Безкоштовна доставка активована' : '✓ Free shipping activated'}</p>
             }
             <div className="mt-1 h-0.5 bg-vt-100"><div className="h-full bg-vt-500 transition-all" style={{ width: `${Math.min((totalPrice / freeAt) * 100, 100)}%` }} /></div>
           </div>
@@ -122,8 +131,8 @@ export function LorellCart({ open, onClose }) {
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
               <ShoppingBag size={40} className="text-lorelle-300" />
-              <p className="font-serif text-lg text-gray-600">Корзина пуста</p>
-              <Link to="/brand/vt-cosmetics" onClick={onClose} className="btn-primary">Смотреть каталог</Link>
+              <p className="font-serif text-lg text-gray-600">{language === 'ua' ? 'Кошик порожній' : 'Cart is empty'}</p>
+              <Link to="/brand/vt-cosmetics" onClick={onClose} className="btn-primary">{language === 'ua' ? 'Дивитись каталог' : 'View catalog'}</Link>
             </div>
           ) : items.map(item => (
             <div key={item.id} className="flex gap-3 bg-white p-3 border border-gray-100">
@@ -139,7 +148,7 @@ export function LorellCart({ open, onClose }) {
                     <button onClick={() => updateQty(item.id, item.qty + 1)} className="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-ink"><Plus size={11} /></button>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="font-bold text-sm">{(item.price * item.qty).toLocaleString('ru-RU')} ₽</span>
+                    <span className="font-bold text-sm">{convertPrice(item.price * item.qty).toLocaleString()}{getCurrencySymbol()}</span>
                     <button onClick={() => removeItem(item.id)} className="text-gray-300 hover:text-red-400 transition-colors"><Trash2 size={13} /></button>
                   </div>
                 </div>
@@ -151,15 +160,15 @@ export function LorellCart({ open, onClose }) {
         {items.length > 0 && (
           <div className="px-6 py-5 border-t border-gray-200 space-y-3">
             <div className="flex justify-between text-sm text-gray-500">
-              <span>Товары ({totalQty})</span><span>{totalPrice.toLocaleString('ru-RU')} ₽</span>
+              <span>{language === 'ua' ? 'Товари' : 'Items'} ({totalQty})</span><span>{convertPrice(totalPrice).toLocaleString()}{getCurrencySymbol()}</span>
             </div>
             <div className="flex justify-between font-bold text-lg text-ink border-t border-gray-100 pt-2">
-              <span>Итого</span><span>{totalPrice.toLocaleString('ru-RU')} ₽</span>
+              <span>{language === 'ua' ? 'Разом' : 'Total'}</span><span>{convertPrice(totalPrice).toLocaleString()}{getCurrencySymbol()}</span>
             </div>
             <button onClick={handleCheckout} className="btn-primary w-full flex items-center justify-center gap-2">
-              Оформить заказ <ArrowRight size={14} />
+              {language === 'ua' ? 'Оформити замовлення' : 'Checkout'} <ArrowRight size={14} />
             </button>
-            <button onClick={clearCart} className="w-full text-[11px] text-gray-400 hover:text-red-400 transition-colors py-1">Очистить корзину</button>
+            <button onClick={clearCart} className="w-full text-[11px] text-gray-400 hover:text-red-400 transition-colors py-1">{language === 'ua' ? 'Очистити кошик' : 'Clear cart'}</button>
           </div>
         )}
       </div>
@@ -171,21 +180,21 @@ export function LorellCart({ open, onClose }) {
           <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
             <div className="bg-lorelle-100 max-w-sm w-full shadow-2xl">
               <div className="bg-ink px-6 py-4 flex justify-between items-center">
-                <span className="text-[9px] uppercase tracking-widest text-lorelle-400 font-semibold">LORELLE · Условия заказа</span>
+                <span className="text-[9px] uppercase tracking-widest text-lorelle-400 font-semibold">LORELLE · {language === 'ua' ? 'Умови замовлення' : 'Order conditions'}</span>
                 <button onClick={() => setShowMin(false)}><X size={14} className="text-lorelle-400" /></button>
               </div>
               <div className="px-8 py-8 text-center">
                 <AlertCircle size={28} className="text-vt-700 mx-auto mb-4" />
-                <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-2">Минимальный заказ</p>
-                <p className="font-display text-5xl text-ink mb-2">14 000 ₽</p>
+                <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-2">{language === 'ua' ? 'Мінімальне замовлення' : 'Minimum order'}</p>
+                <p className="font-display text-5xl text-ink mb-2">{minOrder.toLocaleString()}{getCurrencySymbol()}</p>
                 <div className="w-8 h-px bg-gray-300 mx-auto mb-4" />
-                <p className="text-sm text-gray-600 mb-1">В корзине: <strong>{totalPrice.toLocaleString('ru-RU')} ₽</strong></p>
-                <p className="text-xs text-gray-400 mb-6">Добавьте ещё на <strong className="text-vt-700">{(MIN_ORDER - totalPrice).toLocaleString('ru-RU')} ₽</strong></p>
+                <p className="text-sm text-gray-600 mb-1">{language === 'ua' ? 'У кошику:' : 'In cart:'} <strong>{convertPrice(totalPrice).toLocaleString()}{getCurrencySymbol()}</strong></p>
+                <p className="text-xs text-gray-400 mb-6">{language === 'ua' ? 'Додайте ще на' : 'Add'} <strong className="text-vt-700">{(minOrder - totalPrice).toLocaleString()}{getCurrencySymbol()}</strong></p>
                 <Link to="/brand/vt-cosmetics" onClick={() => { setShowMin(false); onClose() }}
                   className="btn-primary w-full flex items-center justify-center gap-2 mb-3">
-                  <ShoppingBag size={13} /> Добавить товары
+                  <ShoppingBag size={13} /> {language === 'ua' ? 'Додати товари' : 'Add items'}
                 </Link>
-                <button onClick={() => setShowMin(false)} className="text-[11px] text-gray-400 hover:text-gray-600 py-1">Вернуться в корзину</button>
+                <button onClick={() => setShowMin(false)} className="text-[11px] text-gray-400 hover:text-gray-600 py-1">{language === 'ua' ? 'Повернутися в кошик' : 'Return to cart'}</button>
               </div>
             </div>
           </div>
@@ -620,9 +629,10 @@ export function SkinAnalysisPage() {
 export function BrandPage() {
   const { slug } = useParams()
   const { addItem } = useCart()
+  const { language, convertPrice, getCurrencySymbol } = useLanguage()
   const [pageIdx, setPageIdx] = useState(0)
   const [added, setAdded] = useState(null)
-  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts, 'medicube': medicubeProducts, 'mary-may': maryMayProducts, 'fino': finoProducts, 'maxcare': maxcareProducts, 'skin1004': centellaProducts }
+  const brandProductMap = { 'vt-cosmetics': vtProducts, 'anua': anuaProducts, 'medicube': medicubeProducts, 'mary-may': maryMayProducts, 'fino': finoProducts, 'skin1004': centellaProducts }
   const allProducts = brandProductMap[slug]
   const total = allProducts?.length ?? 0
 
@@ -722,11 +732,11 @@ export function BrandPage() {
             <div className="border border-gray-200 bg-white p-5 mt-auto">
               <div className="grid grid-cols-3 gap-4 mb-4 text-[10px]">
                 <div>
-                  <p className="mag-label mb-1">Объём</p>
+                  <p className="mag-label mb-1">{language === 'ua' ? 'Об\'єм' : 'Volume'}</p>
                   <p className="font-semibold text-ink">{product.volume}</p>
                 </div>
                 <div>
-                  <p className="mag-label mb-1">Активные компоненты</p>
+                  <p className="mag-label mb-1">{language === 'ua' ? 'Активні компоненти' : 'Active ingredients'}</p>
                   <div className="space-y-0.5">
                     {product.ingredients.slice(0, 3).map((ing, i) => (
                       <p key={i} className="text-gray-600">· {ing}</p>
@@ -734,7 +744,7 @@ export function BrandPage() {
                   </div>
                 </div>
                 <div>
-                  <p className="mag-label mb-1">Для какой кожи</p>
+                  <p className="mag-label mb-1">{language === 'ua' ? 'Для якої шкіри' : 'For skin type'}</p>
                   <div className="space-y-0.5">
                     {product.skinTypes.slice(0, 4).map((st, i) => (
                       <p key={i} className="text-gray-600">✓ {st}</p>
@@ -743,14 +753,14 @@ export function BrandPage() {
                 </div>
               </div>
               <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <span className="font-display text-3xl text-ink">{product.price.toLocaleString('ru-RU')} ₽</span>
+                <span className="font-display text-3xl text-ink">{convertPrice(product.price).toLocaleString()}{getCurrencySymbol()}</span>
                 <button
                   onClick={handleAdd}
                   className={`transition-all px-6 py-2.5 text-xs uppercase tracking-widest font-semibold ${
                     added === product.id ? 'bg-vt-600 text-white' : 'bg-ink text-white hover:bg-vt-700'
                   }`}
                 >
-                  {added === product.id ? '✓ Добавлено' : '+ В корзину'}
+                  {added === product.id ? (language === 'ua' ? '✓ Додано' : '✓ Added') : (language === 'ua' ? '+ В кошик' : '+ Add to cart')}
                 </button>
               </div>
             </div>

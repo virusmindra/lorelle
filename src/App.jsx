@@ -1,6 +1,7 @@
 import React, { useState, Component } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
+import { LanguageProvider } from './context/LanguageContext'
 import Checkout from './pages/Checkout'
 import {
   LorelleMasthead,
@@ -59,9 +60,11 @@ function Layout() {
 export default function App() {
   return (
     <ErrorBoundary>
-      <CartProvider>
-        <Layout />
-      </CartProvider>
+      <LanguageProvider>
+        <CartProvider>
+          <Layout />
+        </CartProvider>
+      </LanguageProvider>
     </ErrorBoundary>
   )
 }
