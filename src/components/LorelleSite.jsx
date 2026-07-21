@@ -14,7 +14,7 @@ export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
       {/* Top row */}
       <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200">
         <button onClick={onMenuOpen} className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-gray-500 hover:text-ink transition-colors">
-          <Menu size={15} /> <span className="hidden sm:inline">Меню</span>
+          <Menu size={15} /> <span className="hidden sm:inline">{language === 'ua' ? 'Меню' : 'Menu'}</span>
         </button>
         <Link to="/" className="font-serif font-black tracking-[0.18em] text-4xl md:text-5xl text-ink leading-none select-none">
           LORELLE
@@ -24,7 +24,7 @@ export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
             {language === 'ua' ? 'UA' : 'EN'}
           </button>
           <button onClick={onCartOpen} className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-gray-500 hover:text-ink transition-colors">
-            <ShoppingBag size={15} /> <span className="hidden sm:inline">Корзина</span>
+            <ShoppingBag size={15} /> <span className="hidden sm:inline">{language === 'ua' ? 'Кошик' : 'Cart'}</span>
           </button>
         </div>
       </div>
@@ -59,6 +59,10 @@ export function LorelleMasthead({ onCartOpen, onMenuOpen }) {
 
 /* ─── SIDE MENU ──────────────────────────────────────────────── */
 export function SideMenu({ open, onClose }) {
+  const { language, convertPrice, getCurrencySymbol } = useLanguage()
+  const minOrder = convertPrice(14000)
+  const freeShipping = convertPrice(20000)
+
   return (
     <>
       {open && <div className="fixed inset-0 bg-black/40 z-50" onClick={onClose} />}
@@ -69,10 +73,10 @@ export function SideMenu({ open, onClose }) {
         </div>
         <nav className="flex-1 px-6 py-6 space-y-1">
           {[
-            { to: '/', label: 'Главная' },
-            { to: '/skin-analysis', label: 'Анализ кожи' },
+            { to: '/', label: language === 'ua' ? 'Головна' : 'Home' },
+            { to: '/skin-analysis', label: language === 'ua' ? 'Аналіз шкіри' : 'Skin analysis' },
             { to: '/brand/vt-cosmetics', label: 'VT Cosmetics' },
-            { to: '/checkout', label: 'Оформить заказ' },
+            { to: '/checkout', label: language === 'ua' ? 'Оформити замовлення' : 'Checkout' },
           ].map(({ to, label }) => (
             <Link key={to} to={to} onClick={onClose}
               className="block py-3 border-b border-gray-100 text-sm font-medium text-gray-700 hover:text-ink transition-colors tracking-wide">
@@ -81,9 +85,9 @@ export function SideMenu({ open, onClose }) {
           ))}
         </nav>
         <div className="px-6 py-5 border-t border-gray-200 text-[10px] text-gray-400 space-y-1">
-          <p>Минимальный заказ: 14 000 ₽</p>
-          <p>Бесплатная доставка: от 20 000 ₽</p>
-          <p>Доставка только по России</p>
+          <p>{language === 'ua' ? 'Мінімальне замовлення:' : 'Minimum order:'} {minOrder.toLocaleString()}{getCurrencySymbol()}</p>
+          <p>{language === 'ua' ? 'Безкоштовна доставка: від' : 'Free shipping: from'} {freeShipping.toLocaleString()}{getCurrencySymbol()}</p>
+          <p>{language === 'ua' ? 'Доставка тільки по Україні' : 'Delivery only in Ukraine'}</p>
         </div>
       </div>
     </>
@@ -206,25 +210,107 @@ export function LorellCart({ open, onClose }) {
 
 /* ─── HOME PAGE ──────────────────────────────────────────────── */
 export function HomePage() {
+  const { language } = useLanguage()
+  
+  const content = {
+    ua: {
+      section1: {
+        title: 'Чому<br />у кореянок<br />така<br />красива<br />шкіра?',
+        subtitle: 'Багато хто вважає, що секрет корейської шкіри прихований в одному дорогому кремі.<br />Але справжня причина зовсім інша.',
+        points: [
+          'Красива шкіра — це результат систематичного догляду, де кожний засіб виконує свою задачу і посилює дію наступного.',
+          'У Кореї догляд за шкірою — це щоденна звичка, така ж природна, як чищення зубів або заняття спортом.',
+        ],
+        stepsTitle: 'Корейський догляд складається з кількох етапів',
+        steps: [
+          { n: '1', title: 'ОЧИЩЕННЯ', desc: 'Видаляє забруднення, надлишки себуму та залишки макіяжу' },
+          { n: '2', title: 'ПІДГОТОВКА ШКІРИ', desc: 'Тонер відновлює баланс шкіри і підвищує ефективність наступних засобів' },
+          { n: '3', title: 'АКТИВНА СИРОВАТКА', desc: 'Доставляє активні компоненти глибоко в шкіру і вирішує конкретні задачі' },
+          { n: '4', title: 'ЗВОЛОЖУЮЧИЙ КРЕМ', desc: 'Утримує вологу, живить і зміцнює захисний бар\'єр шкіри' },
+          { n: '5', title: 'ЗАХИСТ ВІД СОНЦЯ', desc: 'SPF-захист запобігає фотостарінню і допомагає зберегти молодість' },
+        ],
+        result1: 'Кожен етап працює на загальний результат: здорову, зволожену і сяючу шкіру. Коли засоби підібрані правильно і використовуються регулярно, шкіра починає виглядати помітно краще вже через кілька тижнів.',
+        result2: 'Краса шкіри починається не з одного крему. Вона починається з правильної системи догляду.',
+        resultsTitle: 'Результат комплексного догляду',
+        results: [
+          { icon: '💧', label: 'Глибоке зволоження' },
+          { icon: '✨', label: 'Природне сяйво' },
+          { icon: '🛡', label: 'Сильний захисний бар\'єр' },
+          { icon: '🌊', label: 'Рівна текстура і тон' },
+          { icon: '⏳', label: 'Профілактика вікових змін' },
+        ],
+      },
+      section2: {
+        title: 'Ви оплачуєте косметику,<br />а не чужі комісії.',
+        text: [
+          'Сьогодні вартість товару часто визначається не тільки його якістю.',
+          'При покупці на великих маркетплейсах в ціну включені комісії майданчика, витрати на рекламу, логістику, зберігання, обробку повернень та інші операційні витрати продавця. Всі ці витрати в кінцевому підсумку відображаються на вартості для покупця.',
+          'Ми обрали інший шлях.',
+          'Замість довгої ланцюжки посередників ми закуповуємо оригінальну косметику безпосередньо у перевірених постачальників у Кореї та В\'єтнамі і продаємо її через власний магазин.',
+          'Тому ви оплачуєте перш за все оригінальний продукт, а не численні комісії та додаткові націнки.',
+          'Менше посередників.<br />Більше цінності.',
+        ],
+      },
+    },
+    en: {
+      section1: {
+        title: 'Why<br />Korean<br />women<br />have such<br />beautiful<br />skin?',
+        subtitle: 'Many think the secret of Korean skin is hidden in one expensive cream.<br />But the real reason is quite different.',
+        points: [
+          'Beautiful skin is the result of systematic care, where each product performs its task and enhances the action of the next.',
+          'In Korea, skin care is a daily habit, as natural as brushing teeth or exercising.',
+        ],
+        stepsTitle: 'Korean care consists of several stages',
+        steps: [
+          { n: '1', title: 'CLEANSING', desc: 'Removes dirt, excess sebum and makeup residue' },
+          { n: '2', title: 'SKIN PREPARATION', desc: 'Toner restores skin balance and increases the effectiveness of subsequent products' },
+          { n: '3', title: 'ACTIVE SERUM', desc: 'Delivers active ingredients deep into the skin and solves specific problems' },
+          { n: '4', title: 'MOISTURIZING CREAM', desc: 'Retains moisture, nourishes and strengthens the skin\'s protective barrier' },
+          { n: '5', title: 'SUN PROTECTION', desc: 'SPF protection prevents photoaging and helps maintain youth' },
+        ],
+        result1: 'Each stage works towards the overall result: healthy, hydrated and glowing skin. When products are chosen correctly and used regularly, skin starts to look noticeably better within just a few weeks.',
+        result2: 'Skin beauty doesn\'t start with one cream. It starts with the right care system.',
+        resultsTitle: 'Result of comprehensive care',
+        results: [
+          { icon: '💧', label: 'Deep hydration' },
+          { icon: '✨', label: 'Natural glow' },
+          { icon: '🛡', label: 'Strong protective barrier' },
+          { icon: '🌊', label: 'Even texture and tone' },
+          { icon: '⏳', label: 'Prevention of age-related changes' },
+        ],
+      },
+      section2: {
+        title: 'You pay for cosmetics,<br />not other people\'s commissions.',
+        text: [
+          'Today, the cost of a product is often determined not only by its quality.',
+          'When buying on large marketplaces, the price includes platform commissions, advertising costs, logistics, storage, return processing and other operational costs of the seller. All these costs are ultimately reflected in the price for the buyer.',
+          'We chose a different path.',
+          'Instead of a long chain of intermediaries, we purchase original cosmetics directly from verified suppliers in Korea and Vietnam and sell it through our own store.',
+          'Therefore, you pay primarily for the original product, not for numerous commissions and additional markups.',
+          'Fewer intermediaries.<br />More value.',
+        ],
+      },
+    },
+  }
+
+  const t = content[language]
+
   return (
     <main className="bg-lorelle-100">
 
-      {/* SECTION 1 — Почему у кореянок красивая кожа */}
+      {/* SECTION 1 */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <h1 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
-              Почему<br />у кореянок<br />такая<br />красивая<br />кожа?
+              {t.section1.title}
             </h1>
-            <p className="mag-body mb-5">Многие считают, что секрет корейской кожи скрыт в одном дорогом креме.<br />Но настоящая причина совсем в другом.</p>
+            <p className="mag-body mb-5">{t.section1.subtitle}</p>
             <div className="space-y-4">
-              {[
-                'Красивая кожа — это результат системного ухода, где каждое средство выполняет свою задачу и усиливает действие следующего.',
-                'В Корее уход за кожей — это ежедневная привычка, такая же естественная, как чистка зубов или занятия спортом.',
-              ].map((t, i) => (
+              {t.section1.points.map((point, i) => (
                 <div key={i} className="flex gap-3 bg-lorelle-200 p-4">
                   <span className="text-lg flex-shrink-0">🌿</span>
-                  <p className="mag-body">{t}</p>
+                  <p className="mag-body">{point}</p>
                 </div>
               ))}
             </div>
@@ -235,15 +321,9 @@ export function HomePage() {
         </div>
 
         <div className="border border-gray-200 bg-white p-8 mt-8 mb-8">
-          <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-6">Корейский уход состоит из нескольких этапов</p>
+          <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-6">{t.section1.stepsTitle}</p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {[
-              { n: '1', title: 'ОЧИЩЕНИЕ', desc: 'Удаляет загрязнения, излишки себума и остатки макияжа' },
-              { n: '2', title: 'ПОДГОТОВКА КОЖИ', desc: 'Тонер восстанавливает баланс кожи и повышает эффективность следующих средств' },
-              { n: '3', title: 'АКТИВНАЯ СЫВОРОТКА', desc: 'Доставляет активные компоненты глубоко в кожу и решает конкретные задачи' },
-              { n: '4', title: 'УВЛАЖНЯЮЩИЙ КРЕМ', desc: 'Удерживает влагу, питает и укрепляет защитный барьер кожи' },
-              { n: '5', title: 'ЗАЩИТА ОТ СОЛНЦА', desc: 'SPF-защита предотвращает фотостарение и помогает сохранить молодость' },
-            ].map(s => (
+            {t.section1.steps.map(s => (
               <div key={s.n} className="text-center">
                 <div className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="font-display text-xl text-gray-500">{s.n}</span>
@@ -256,20 +336,14 @@ export function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-200 pt-8">
-          <p className="mag-body">Каждый этап работает на общий результат: здоровую, увлажнённую и сияющую кожу. Когда средства подобраны правильно и используются регулярно, кожа начинает выглядеть заметно лучше уже через несколько недель.</p>
-          <p className="font-editorial italic text-lg text-gray-600 leading-relaxed">Красота кожи начинается не с одного крема. Она начинается с правильной системы ухода.</p>
+          <p className="mag-body">{t.section1.result1}</p>
+          <p className="font-editorial italic text-lg text-gray-600 leading-relaxed">{t.section1.result2}</p>
         </div>
 
         <div className="mt-8">
-          <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">Результат комплексного ухода</p>
+          <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">{t.section1.resultsTitle}</p>
           <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-            {[
-              { icon: '💧', label: 'Глубокое увлажнение' },
-              { icon: '✨', label: 'Естественное сияние' },
-              { icon: '🛡', label: 'Сильный защитный барьер' },
-              { icon: '🌊', label: 'Ровная текстура и тон' },
-              { icon: '⏳', label: 'Профилактика возрастных изменений' },
-            ].map(({ icon, label }) => (
+            {t.section1.results.map(({ icon, label }) => (
               <div key={label} className="text-center p-4 border border-gray-200">
                 <div className="text-2xl mb-2">{icon}</div>
                 <p className="text-[10px] text-gray-600 leading-tight font-medium">{label}</p>
@@ -279,20 +353,17 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2 — Вы оплачиваете косметику, а не чужие комиссии */}
+      {/* SECTION 2 */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="md:col-span-2 flex flex-col justify-center">
             <h2 className="font-serif text-5xl md:text-6xl text-ink leading-tight mb-5">
-              Вы оплачиваете косметику,<br />а не чужие комиссии.
+              {t.section2.title}
             </h2>
             <div className="space-y-3 mag-body">
-              <p>Сегодня стоимость товара часто определяется не только его качеством.</p>
-              <p>При покупке на крупных маркетплейсах в цену включены комиссии площадки, расходы на рекламу, логистику, хранение, обработку возвратов и другие операционные издержки продавца. Все эти расходы в конечном итоге отражаются на стоимости для покупателя.</p>
-              <p className="font-semibold text-ink">Мы выбрали другой путь.</p>
-              <p>Вместо длинной цепочки посредников мы закупаем оригинальную косметику напрямую у проверенных поставщиков в Корее и Вьетнаме и продаём её через собственный магазин.</p>
-              <p><strong>Поэтому вы оплачиваете прежде всего оригинальный продукт, а не многочисленные комиссии и дополнительные наценки.</strong></p>
-              <p className="font-editorial italic text-base text-gray-500 pt-1">Меньше посредников.<br />Больше ценности.</p>
+              {t.section2.text.map((text, i) => (
+                <p key={i} className={i === 2 ? 'font-semibold text-ink' : i === 5 ? 'font-editorial italic text-base text-gray-500 pt-1' : ''}>{text}</p>
+              ))}
             </div>
           </div>
           <div className="md:col-span-3 flex flex-col gap-3">
@@ -306,16 +377,16 @@ export function HomePage() {
         </div>
 
         <div className="mt-8 border border-gray-200 bg-white p-6">
-          <p className="text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">Цена на маркетплейсе</p>
+          <p className="text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">{language === 'ua' ? 'Ціна на маркетплейсі' : 'Marketplace price'}</p>
           <div className="flex flex-wrap items-start gap-2">
             {[
-              { icon: '🏭', label: 'Производитель' },
-              { icon: '📦', label: 'Импортёр' },
-              { icon: '🚛', label: 'Дистрибьютор' },
-              { icon: '🛒', label: 'Маркетплейс' },
-              { icon: '📣', label: 'Реклама' },
-              { icon: '🏢', label: 'Логистика и хранение' },
-              { icon: '👤', label: 'Покупатель' },
+              { icon: '🏭', label: language === 'ua' ? 'Виробник' : 'Manufacturer' },
+              { icon: '📦', label: language === 'ua' ? 'Імпортер' : 'Importer' },
+              { icon: '🚛', label: language === 'ua' ? 'Дистриб\'ютор' : 'Distributor' },
+              { icon: '🛒', label: language === 'ua' ? 'Маркетплейс' : 'Marketplace' },
+              { icon: '📣', label: language === 'ua' ? 'Реклама' : 'Advertising' },
+              { icon: '🏢', label: language === 'ua' ? 'Логістика і зберігання' : 'Logistics & storage' },
+              { icon: '👤', label: language === 'ua' ? 'Покупець' : 'Buyer' },
             ].map((step, i, arr) => (
               <React.Fragment key={step.label}>
                 <div className="text-center">
@@ -332,7 +403,7 @@ export function HomePage() {
           <div className="border border-gray-200 bg-white p-6">
             <p className="text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-5">Lorelle</p>
             <div className="flex items-start gap-3">
-              {[{ icon: '🏭', label: 'Производитель' }, { icon: 'L', label: 'Lorelle' }, { icon: '👤', label: 'Покупатель' }].map((step, i, arr) => (
+              {[{ icon: '🏭', label: language === 'ua' ? 'Виробник' : 'Manufacturer' }, { icon: 'L', label: 'Lorelle' }, { icon: '👤', label: language === 'ua' ? 'Покупець' : 'Buyer' }].map((step, i, arr) => (
                 <React.Fragment key={step.label}>
                   <div className="text-center">
                     <div className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center mx-auto mb-1 text-sm font-bold text-ink">{step.icon}</div>
@@ -344,18 +415,18 @@ export function HomePage() {
             </div>
           </div>
           <div className="flex flex-col justify-center p-2">
-            <p className="font-serif text-2xl text-ink mb-3 leading-tight">Прямая цепочка —<br />честная цена.</p>
-            <p className="mag-body">Мы работаем напрямую с проверенными поставщиками из Кореи и Вьетнама, поэтому стоимость наших товаров максимально отражает цену самого продукта, а не расходы многочисленных посредников.</p>
+            <p className="font-serif text-2xl text-ink mb-3 leading-tight">{language === 'ua' ? 'Пряма ланцюжок —<br />чесна ціна.' : 'Direct chain —<br />honest price.'}</p>
+            <p className="mag-body">{language === 'ua' ? 'Ми працюємо напряму з перевіреними постачальниками з Кореї та В\'єтнаму, тому вартість наших товарів максимально відображає ціну самого продукту, а не витрати численних посередників.' : 'We work directly with verified suppliers from Korea and Vietnam, so the cost of our products maximally reflects the price of the product itself, not the expenses of numerous intermediaries.'}</p>
           </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-5">
           {[
-            { icon: '⭐', text: 'Только оригинальная продукция' },
-            { icon: '🌏', text: 'Прямые поставки из Кореи и Вьетнама' },
-            { icon: '✓', text: 'Проверенные бренды и свежие поставки' },
-            { icon: '💬', text: 'Бесплатный подбор ухода и поддержка после покупки' },
-            { icon: '🏷', text: 'Честная цена без переплат за чужие комиссии' },
+            { icon: '⭐', text: language === 'ua' ? 'Тільки оригінальна продукція' : 'Only original products' },
+            { icon: '🌏', text: language === 'ua' ? 'Прямі поставки з Кореї та В\'єтнаму' : 'Direct supplies from Korea and Vietnam' },
+            { icon: '✓', text: language === 'ua' ? 'Перевірені бренди та свіжі поставки' : 'Verified brands and fresh supplies' },
+            { icon: '💬', text: language === 'ua' ? 'Безкоштовний підбір догляду та підтримка після покупки' : 'Free care selection and support after purchase' },
+            { icon: '🏷', text: language === 'ua' ? 'Чесна ціна без переплат за чужі комісії' : 'Honest price without overpayments for others\' commissions' },
           ].map(({ icon, text }) => (
             <div key={text} className="flex gap-2 p-3 border border-gray-200 bg-white items-start">
               <span className="text-base flex-shrink-0">{icon}</span>
@@ -365,24 +436,24 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3 — Бесплатный анализ кожи */}
+      {/* SECTION 3 — Free skin analysis */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
           <div>
             <h2 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
-              Бесплатный<br />анализ<br />кожи
+              {language === 'ua' ? 'Безкоштовний<br />аналіз<br />шкіри' : 'Free<br />skin<br />analysis'}
             </h2>
-            <p className="mag-body max-w-md">Загрузите фотографию лица анфас и получите подробный анализ состояния кожи с рекомендациями по уходу</p>
+            <p className="mag-body max-w-md">{language === 'ua' ? 'Завантажте фотографію обличчя анфас і отримайте детальний аналіз стану шкіри з рекомендаціями по догляду' : 'Upload a frontal face photo and get a detailed analysis of your skin condition with care recommendations'}</p>
           </div>
           <div className="flex flex-col gap-3 flex-shrink-0">
             <div className="bg-lorelle-200 p-4 flex items-center gap-3">
               <span className="text-xl">🌿</span>
-              <p className="font-editorial italic text-sm text-gray-600">Ваша кожа уникальна.<br />Уход должен быть персональным.</p>
+              <p className="font-editorial italic text-sm text-gray-600">{language === 'ua' ? 'Ваша шкіра унікальна.<br />Догляд має бути персональним.' : 'Your skin is unique.<br />Care should be personal.'}</p>
             </div>
             <Link to="/skin-analysis" className="btn-secondary flex items-center gap-2 w-fit">
-              <Camera size={14} /> Пройти анализ кожи
+              <Camera size={14} /> {language === 'ua' ? 'Пройти аналіз шкіри' : 'Take skin analysis'}
             </Link>
           </div>
         </div>
@@ -391,41 +462,41 @@ export function HomePage() {
         <div className="hidden md:grid md:grid-cols-3 gap-4">
           <div className="md:col-start-1 md:row-start-1 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">🔍</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ОПРЕДЕЛЕНИЕ ТИПА КОЖИ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Узнайте свой тип кожи и её особенности</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'ВИЗНАЧЕННЯ ТИПУ ШКІРИ' : 'SKIN TYPE DETERMINATION'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Дізнайтеся свій тип шкіри та її особливості' : 'Learn your skin type and its features'}</p>
           </div>
           <div className="md:col-start-2 md:row-start-1 md:row-span-2 rounded-2xl overflow-hidden">
             <img src="/images/korean-analysis.png" alt="Skin Analysis" className="w-full h-full object-cover object-center" />
           </div>
           <div className="md:col-start-3 md:row-start-1 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">💧</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ОЦЕНКА УРОВНЯ УВЛАЖНЕНИЯ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Проверка уровня увлажнённости кожи</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'ОЦІНКА РІВНЯ ЗВОЛОЖЕННЯ' : 'HYDRATION LEVEL ASSESSMENT'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Перевірка рівня зволоженості шкіри' : 'Checking skin hydration level'}</p>
           </div>
           <div className="md:col-start-1 md:row-start-2 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">🔬</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">АНАЛИЗ ПОР И ТЕКСТУРЫ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Выявим особенности пор, рельефа и текстуры кожи</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'АНАЛІЗ ПОР І ТЕКСТУРИ' : 'PORE AND TEXTURE ANALYSIS'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Виявимо особливості пор, рельєфу і текстури шкіри' : 'Identify pore features, relief and skin texture'}</p>
           </div>
           <div className="md:col-start-3 md:row-start-2 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">🌡</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ВЫЯВЛЕНИЕ ЧУВСТВИТЕЛЬНОСТИ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Определим склонность к покраснениям и раздражениям</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'ВИЯВЛЕННЯ ЧУТЛИВОСТІ' : 'SENSITIVITY DETECTION'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Визначимо схильність до почервонінь і подразнень' : 'Determine tendency to redness and irritation'}</p>
           </div>
           <div className="md:col-start-1 md:row-start-3 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">🌅</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">РЕКОМЕНДАЦИИ ПО УТРЕННЕМУ УХОДУ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Пошаговая схема ухода для защиты и сияния кожи</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'РЕКОМЕНДАЦІЇ ПО РАНКОВОМУ ДОГЛЯДУ' : 'MORNING CARE RECOMMENDATIONS'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Покрокова схема догляду для захисту і сяйва шкіри' : 'Step-by-step care routine for protection and skin glow'}</p>
           </div>
           <div className="md:col-start-2 md:row-start-3 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">🌙</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">РЕКОМЕНДАЦИИ ПО ВЕЧЕРНЕМУ УХОДУ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Пошаговая схема ухода для восстановления кожи</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'РЕКОМЕНДАЦІЇ ПО ВЕЧІРНЬОМУ ДОГЛЯДУ' : 'EVENING CARE RECOMMENDATIONS'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Покрокова схема догляду для відновлення шкіри' : 'Step-by-step care routine for skin recovery'}</p>
           </div>
           <div className="md:col-start-3 md:row-start-3 text-center p-5 border border-gray-200 bg-white flex flex-col items-center justify-center" style={{ minHeight: '170px' }}>
             <div className="text-3xl mb-3">✨</div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">ПОДБОР КОРЕЙСКОЙ КОСМЕТИКИ</p>
-            <p className="text-[10px] text-gray-500 leading-snug">Индивидуальные рекомендации с подбором средств именно для вашей кожи</p>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-ink mb-2 leading-tight">{language === 'ua' ? 'ПІДБІР КОРЕЙСЬКОЇ КОСМЕТИКИ' : 'KOREAN COSMETICS SELECTION'}</p>
+            <p className="text-[10px] text-gray-500 leading-snug">{language === 'ua' ? 'Індивідуальні рекомендації з підбором засобів саме для вашої шкіри' : 'Individual recommendations with product selection specifically for your skin'}</p>
           </div>
         </div>
 
@@ -436,13 +507,13 @@ export function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: '🔍', title: 'ОПРЕДЕЛЕНИЕ ТИПА КОЖИ', desc: 'Узнайте свой тип кожи и её особенности' },
-              { icon: '💧', title: 'ОЦЕНКА УРОВНЯ УВЛАЖНЕНИЯ', desc: 'Проверка уровня увлажнённости кожи' },
-              { icon: '🔬', title: 'АНАЛИЗ ПОР И ТЕКСТУРЫ', desc: 'Выявим особенности пор, рельефа и текстуры кожи' },
-              { icon: '🌡', title: 'ВЫЯВЛЕНИЕ ЧУВСТВИТЕЛЬНОСТИ', desc: 'Определим склонность к покраснениям и раздражениям' },
-              { icon: '🌅', title: 'РЕКОМЕНДАЦИИ ПО УТРЕННЕМУ УХОДУ', desc: 'Пошаговая схема ухода для защиты и сияния кожи' },
-              { icon: '🌙', title: 'РЕКОМЕНДАЦИИ ПО ВЕЧЕРНЕМУ УХОДУ', desc: 'Пошаговая схема ухода для восстановления кожи' },
-              { icon: '✨', title: 'ПОДБОР КОРЕЙСКОЙ КОСМЕТИКИ', desc: 'Индивидуальные рекомендации с подбором средств именно для вашей кожи' },
+              { icon: '🔍', title: language === 'ua' ? 'ВИЗНАЧЕННЯ ТИПУ ШКІРИ' : 'SKIN TYPE DETERMINATION', desc: language === 'ua' ? 'Дізнайтеся свій тип шкіри та її особливості' : 'Learn your skin type and its features' },
+              { icon: '💧', title: language === 'ua' ? 'ОЦІНКА РІВНЯ ЗВОЛОЖЕННЯ' : 'HYDRATION LEVEL ASSESSMENT', desc: language === 'ua' ? 'Перевірка рівня зволоженості шкіри' : 'Checking skin hydration level' },
+              { icon: '🔬', title: language === 'ua' ? 'АНАЛІЗ ПОР І ТЕКСТУРИ' : 'PORE AND TEXTURE ANALYSIS', desc: language === 'ua' ? 'Виявимо особливості пор, рельєфу і текстури шкіри' : 'Identify pore features, relief and skin texture' },
+              { icon: '🌡', title: language === 'ua' ? 'ВИЯВЛЕННЯ ЧУТЛИВОСТІ' : 'SENSITIVITY DETECTION', desc: language === 'ua' ? 'Визначимо схильність до почервонінь і подразнень' : 'Determine tendency to redness and irritation' },
+              { icon: '🌅', title: language === 'ua' ? 'РЕКОМЕНДАЦІЇ ПО РАНКОВОМУ ДОГЛЯДУ' : 'MORNING CARE RECOMMENDATIONS', desc: language === 'ua' ? 'Покрокова схема догляду для захисту і сяйва шкіри' : 'Step-by-step care routine for protection and skin glow' },
+              { icon: '🌙', title: language === 'ua' ? 'РЕКОМЕНДАЦІЇ ПО ВЕЧІРНЬОМУ ДОГЛЯДУ' : 'EVENING CARE RECOMMENDATIONS', desc: language === 'ua' ? 'Покрокова схема догляду для відновлення шкіри' : 'Step-by-step care routine for skin recovery' },
+              { icon: '✨', title: language === 'ua' ? 'ПІДБІР КОРЕЙСЬКОЇ КОСМЕТИКИ' : 'KOREAN COSMETICS SELECTION', desc: language === 'ua' ? 'Індивідуальні рекомендації з підбором засобів саме для вашої шкіри' : 'Individual recommendations with product selection specifically for your skin' },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="text-center p-4 border border-gray-200 bg-white">
                 <div className="text-2xl mb-2">{icon}</div>
@@ -456,10 +527,10 @@ export function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mt-8 border border-gray-200">
           <div className="bg-lorelle-200 p-8 flex flex-col justify-between" style={{ minHeight: '260px' }}>
             <div>
-              <h3 className="font-serif text-3xl text-ink mb-3">Готовые решения<br />для вашей кожи</h3>
-              <p className="mag-body mb-6">Мы уже собрали эффективные комплексы корейской косметики для разных типов кожи и задач. Вам остаётся только выбрать свой идеальный уход.</p>
+              <h3 className="font-serif text-3xl text-ink mb-3">{language === 'ua' ? 'Готові рішення<br />для вашої шкіри' : 'Ready solutions<br />for your skin'}</h3>
+              <p className="mag-body mb-6">{language === 'ua' ? 'Ми вже зібрали ефективні комплекси корейської косметики для різних типів шкіри і задач. Вам залишається тільки вибрати свій ідеальний догляд.' : 'We have already assembled effective complexes of Korean cosmetics for different skin types and tasks. You just have to choose your ideal care.'}</p>
               <Link to="/brand/vt-cosmetics" className="btn-primary inline-flex items-center gap-2">
-                Подобрать свой уход <ArrowRight size={13} />
+                {language === 'ua' ? 'Підібрати свій догляд' : 'Choose your care'} <ArrowRight size={13} />
               </Link>
             </div>
           </div>
@@ -475,6 +546,7 @@ export function HomePage() {
 
 /* ─── SKIN ANALYSIS ──────────────────────────────────────────── */
 export function SkinAnalysisPage() {
+  const { language } = useLanguage()
   const [photo, setPhoto] = useState(null)
   const [preview, setPreview] = useState(null)
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '' })
@@ -492,11 +564,11 @@ export function SkinAnalysisPage() {
   }
   const validate = () => {
     const e = {}
-    if (!photo) e.photo = 'Загрузите фотографию'
-    if (!form.firstName.trim()) e.firstName = 'Введите имя'
-    if (!form.lastName.trim()) e.lastName = 'Введите фамилию'
-    if (!form.email.includes('@')) e.email = 'Введите корректный email'
-    if (!form.phone.trim()) e.phone = 'Введите номер телефона'
+    if (!photo) e.photo = language === 'ua' ? 'Завантажте фотографію' : 'Upload a photo'
+    if (!form.firstName.trim()) e.firstName = language === 'ua' ? 'Введіть ім\'я' : 'Enter first name'
+    if (!form.lastName.trim()) e.lastName = language === 'ua' ? 'Введіть прізвище' : 'Enter last name'
+    if (!form.email.includes('@')) e.email = language === 'ua' ? 'Введіть коректний email' : 'Enter valid email'
+    if (!form.phone.trim()) e.phone = language === 'ua' ? 'Введіть номер телефону' : 'Enter phone number'
     return e
   }
   const handleSubmit = (e) => {
@@ -509,13 +581,13 @@ export function SkinAnalysisPage() {
   if (submitted) return (
     <main className="max-w-2xl mx-auto px-6 py-20 text-center bg-lorelle-100 min-h-screen">
       <CheckCircle size={44} className="text-vt-600 mx-auto mb-6" />
-      <p className="mag-label mb-3">Анализ отправлен</p>
-      <h1 className="font-serif text-6xl text-ink mb-4">Заявка принята</h1>
+      <p className="mag-label mb-3">{language === 'ua' ? 'Аналіз відправлено' : 'Analysis sent'}</p>
+      <h1 className="font-serif text-6xl text-ink mb-4">{language === 'ua' ? 'Заявка прийнята' : 'Application received'}</h1>
       <div className="w-8 h-px bg-gray-300 mx-auto mb-5" />
-      <p className="mag-body mb-2">Спасибо, <strong>{form.firstName}</strong>! Наши специалисты изучат фотографию и составят персональные рекомендации.</p>
-      <p className="text-sm text-gray-500 mb-1">⏱ Ожидание: <strong>до 24 часов</strong></p>
-      <p className="text-sm text-gray-500 mb-8">Результаты придут на: <strong className="text-vt-700">{form.email}</strong></p>
-      <Link to="/brand/vt-cosmetics" className="btn-primary inline-flex items-center gap-2"><ShoppingBag size={13} /> Смотреть каталог</Link>
+      <p className="mag-body mb-2">{language === 'ua' ? 'Дякуємо,' : 'Thank you,'} <strong>{form.firstName}</strong>! {language === 'ua' ? 'Наші спеціалісти вивчать фотографію і складуть персональні рекомендації.' : 'Our specialists will study the photo and prepare personal recommendations.'}</p>
+      <p className="text-sm text-gray-500 mb-1">⏱ {language === 'ua' ? 'Очікування:' : 'Waiting time:'} <strong>{language === 'ua' ? 'до 24 годин' : 'up to 24 hours'}</strong></p>
+      <p className="text-sm text-gray-500 mb-8">{language === 'ua' ? 'Результати прийдуть на:' : 'Results will be sent to:'} <strong className="text-vt-700">{form.email}</strong></p>
+      <Link to="/brand/vt-cosmetics" className="btn-primary inline-flex items-center gap-2"><ShoppingBag size={13} /> {language === 'ua' ? 'Дивитись каталог' : 'View catalog'}</Link>
     </main>
   )
 
@@ -526,16 +598,16 @@ export function SkinAnalysisPage() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="md:col-span-2">
             <h1 className="font-serif text-6xl md:text-7xl text-ink leading-none uppercase mb-4">
-              Бесплатный<br />анализ<br />кожи
+              {language === 'ua' ? 'Безкоштовний<br />аналіз<br />шкіри' : 'Free<br />skin<br />analysis'}
             </h1>
-            <p className="mag-body mb-5">Загрузите фотографию лица анфас и получите подробный анализ состояния кожи с рекомендациями по уходу</p>
+            <p className="mag-body mb-5">{language === 'ua' ? 'Завантажте фотографію обличчя анфас і отримайте детальний аналіз стану шкіри з рекомендаціями по догляду' : 'Upload a frontal face photo and get a detailed analysis of your skin condition with care recommendations'}</p>
             <div className="bg-lorelle-200 p-4 mb-5 flex items-center gap-3">
               <span className="text-xl">🌿</span>
-              <p className="font-editorial italic text-base text-gray-600">Ваша кожа уникальна.<br />Уход должен быть персональным.</p>
+              <p className="font-editorial italic text-base text-gray-600">{language === 'ua' ? 'Ваша шкіра унікальна.<br />Догляд має бути персональним.' : 'Your skin is unique.<br />Care should be personal.'}</p>
             </div>
             <button onClick={() => document.getElementById('analysis-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-secondary flex items-center gap-2">
-              <Camera size={14} /> Пройти анализ кожи
+              <Camera size={14} /> {language === 'ua' ? 'Пройти аналіз шкіри' : 'Take skin analysis'}
             </button>
           </div>
           <div className="md:col-span-3 flex items-start justify-center">
@@ -548,15 +620,15 @@ export function SkinAnalysisPage() {
 
       {/* What you get */}
       <section className="max-w-7xl mx-auto px-6 py-10 border-b border-gray-200">
-        <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-8">Что вы получите</p>
+        <p className="text-center text-[11px] uppercase tracking-widest font-semibold text-gray-500 mb-8">{language === 'ua' ? 'Що ви отримаєте' : 'What you will get'}</p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            { icon: '🔍', title: 'ОПРЕДЕЛЕНИЕ ТИПА КОЖИ', desc: 'Узнайте свой тип кожи и её особенности' },
-            { icon: '💧', title: 'ОЦЕНКА УРОВНЯ УВЛАЖНЕНИЯ', desc: 'Проверка уровня увлажнённости кожи' },
-            { icon: '🔬', title: 'АНАЛИЗ ПОР И ТЕКСТУРЫ', desc: 'Выявим особенности пор, рельефа и текстуры кожи' },
-            { icon: '🌡', title: 'ВЫЯВЛЕНИЕ ЧУВСТВИТЕЛЬНОСТИ', desc: 'Определим склонность к покраснениям и раздражениям' },
-            { icon: '🌅', title: 'РЕКОМЕНДАЦИИ ПО УТРЕННЕМУ УХОДУ', desc: 'Пошаговая схема ухода для защиты и сияния кожи' },
-            { icon: '🌙', title: 'РЕКОМЕНДАЦИИ ПО ВЕЧЕРНЕМУ УХОДУ', desc: 'Пошаговая схема ухода для восстановления кожи' },
+            { icon: '🔍', title: language === 'ua' ? 'ВИЗНАЧЕННЯ ТИПУ ШКІРИ' : 'SKIN TYPE DETERMINATION', desc: language === 'ua' ? 'Дізнайтеся свій тип шкіри та її особливості' : 'Learn your skin type and its features' },
+            { icon: '💧', title: language === 'ua' ? 'ОЦІНКА РІВНЯ ЗВОЛОЖЕННЯ' : 'HYDRATION LEVEL ASSESSMENT', desc: language === 'ua' ? 'Перевірка рівня зволоженості шкіри' : 'Checking skin hydration level' },
+            { icon: '🔬', title: language === 'ua' ? 'АНАЛІЗ ПОР І ТЕКСТУРИ' : 'PORE AND TEXTURE ANALYSIS', desc: language === 'ua' ? 'Виявимо особливості пор, рельєфу і текстури шкіри' : 'Identify pore features, relief and skin texture' },
+            { icon: '🌡', title: language === 'ua' ? 'ВИЯВЛЕННЯ ЧУТЛИВОСТІ' : 'SENSITIVITY DETECTION', desc: language === 'ua' ? 'Визначимо схильність до почервонінь і подразнень' : 'Determine tendency to redness and irritation' },
+            { icon: '🌅', title: language === 'ua' ? 'РЕКОМЕНДАЦІЇ ПО РАНКОВОМУ ДОГЛЯДУ' : 'MORNING CARE RECOMMENDATIONS', desc: language === 'ua' ? 'Покрокова схема догляду для захисту і сяйва шкіри' : 'Step-by-step care routine for protection and skin glow' },
+            { icon: '🌙', title: language === 'ua' ? 'РЕКОМЕНДАЦІЇ ПО ВЕЧІРНЬОМУ ДОГЛЯДУ' : 'EVENING CARE RECOMMENDATIONS', desc: language === 'ua' ? 'Покрокова схема догляду для відновлення шкіри' : 'Step-by-step care routine for skin recovery' },
           ].map(({ icon, title, desc }) => (
             <div key={title} className="text-center p-4 border border-gray-200 bg-white">
               <div className="text-3xl mb-3">{icon}</div>
@@ -569,25 +641,25 @@ export function SkinAnalysisPage() {
 
       {/* Form */}
       <section id="analysis-form" className="max-w-2xl mx-auto px-6 py-12">
-        <p className="text-center mag-label mb-3">Заполните форму</p>
-        <h2 className="font-serif text-5xl text-ink text-center mb-2">Анализ кожи</h2>
+        <p className="text-center mag-label mb-3">{language === 'ua' ? 'Заповніть форму' : 'Fill out the form'}</p>
+        <h2 className="font-serif text-5xl text-ink text-center mb-2">{language === 'ua' ? 'Аналіз шкіри' : 'Skin analysis'}</h2>
         <div className="w-8 h-px bg-gray-300 mx-auto mb-8" />
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* Photo */}
           <div>
-            <p className="mag-label mb-2">Фотография лица</p>
+            <p className="mag-label mb-2">{language === 'ua' ? 'Фотографія обличчя' : 'Face photo'}</p>
             <div onClick={() => fileRef.current?.click()}
               className={`border-2 border-dashed p-8 text-center cursor-pointer transition-colors ${errors.photo ? 'border-red-300 bg-red-50' : preview ? 'border-vt-400 bg-vt-50' : 'border-lorelle-300 hover:border-vt-400'}`}>
               {preview ? (
                 <div className="flex flex-col items-center gap-2">
                   <img src={preview} alt="Preview" className="w-24 h-24 object-cover" />
-                  <p className="text-xs text-vt-700 font-medium">✓ Фото загружено</p>
+                  <p className="text-xs text-vt-700 font-medium">{language === 'ua' ? '✓ Фото завантажено' : '✓ Photo uploaded'}</p>
                 </div>
               ) : (
                 <div className="flex flex-col items-center gap-2">
                   <Upload size={24} className="text-gray-400" />
-                  <p className="text-sm text-gray-600">Загрузить фотографию лица анфас</p>
-                  <p className="text-xs text-gray-400">JPG, PNG · до 10 МБ</p>
+                  <p className="text-sm text-gray-600">{language === 'ua' ? 'Завантажити фотографію обличчя анфас' : 'Upload frontal face photo'}</p>
+                  <p className="text-xs text-gray-400">JPG, PNG · {language === 'ua' ? 'до 10 МБ' : 'up to 10 MB'}</p>
                 </div>
               )}
             </div>
@@ -596,7 +668,7 @@ export function SkinAnalysisPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            {[{ name: 'firstName', label: 'Имя', ph: 'Анна' }, { name: 'lastName', label: 'Фамилия', ph: 'Иванова' }].map(({ name, label, ph }) => (
+            {[{ name: 'firstName', label: language === 'ua' ? 'Ім\'я' : 'First name', ph: language === 'ua' ? 'Анна' : 'Anna' }, { name: 'lastName', label: language === 'ua' ? 'Прізвище' : 'Last name', ph: language === 'ua' ? 'Іванова' : 'Ivanova' }].map(({ name, label, ph }) => (
               <div key={name}>
                 <label className="mag-label mb-2 block">{label}</label>
                 <input name={name} value={form[name]} onChange={handleInput} placeholder={ph}
@@ -606,7 +678,7 @@ export function SkinAnalysisPage() {
             ))}
           </div>
 
-          {[{ name: 'email', label: 'Email — сюда придут результаты', ph: 'anna@example.com', type: 'email' }, { name: 'phone', label: 'Номер телефона', ph: '+7 (999) 000-00-00', type: 'tel' }].map(({ name, label, ph, type }) => (
+          {[{ name: 'email', label: language === 'ua' ? 'Email — сюди прийдуть результати' : 'Email — results will be sent here', ph: 'anna@example.com', type: 'email' }, { name: 'phone', label: language === 'ua' ? 'Номер телефону' : 'Phone number', ph: language === 'ua' ? '+380 (999) 000-00-00' : '+7 (999) 000-00-00', type: 'tel' }].map(({ name, label, ph, type }) => (
             <div key={name}>
               <label className="mag-label mb-2 block">{label}</label>
               <input name={name} type={type} value={form[name]} onChange={handleInput} placeholder={ph}
@@ -615,9 +687,9 @@ export function SkinAnalysisPage() {
             </div>
           ))}
 
-          <p className="text-xs text-gray-400">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+          <p className="text-xs text-gray-400">{language === 'ua' ? 'Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних.' : 'By clicking the button, you agree to the processing of personal data.'}</p>
           <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2 py-4">
-            <Camera size={14} /> Отправить на анализ
+            <Camera size={14} /> {language === 'ua' ? 'Надіслати на аналіз' : 'Send for analysis'}
           </button>
         </form>
       </section>
@@ -652,9 +724,9 @@ export function BrandPage() {
   if (!allProducts) {
     return (
       <div className="max-w-7xl mx-auto px-6 py-20 text-center bg-lorelle-100 min-h-screen">
-        <p className="font-display text-6xl text-ink mb-4">{lorelleBrands.find(b => b.slug === slug)?.name || 'Бренд'}</p>
-        <p className="mag-body">Продукция этого бренда скоро появится</p>
-        <Link to="/" className="btn-primary inline-block mt-6">На главную</Link>
+        <p className="font-display text-6xl text-ink mb-4">{lorelleBrands.find(b => b.slug === slug)?.name || (language === 'ua' ? 'Бренд' : 'Brand')}</p>
+        <p className="mag-body">{language === 'ua' ? 'Продукція цього бренду скоро з\'явиться' : 'Products from this brand coming soon'}</p>
+        <Link to="/" className="btn-primary inline-block mt-6">{language === 'ua' ? 'На головну' : 'Back to home'}</Link>
       </div>
     )
   }
@@ -675,7 +747,7 @@ export function BrandPage() {
       <button
         onClick={() => setPageIdx(i => Math.max(i - 1, 0))}
         disabled={pageIdx === 0}
-        aria-label="Предыдущий продукт"
+        aria-label={language === 'ua' ? 'Попередній продукт' : 'Previous product'}
         className="fixed left-2 top-1/2 -translate-y-1/2 z-30 w-9 h-20 bg-white border border-gray-200 shadow hover:shadow-md hover:bg-lorelle-200 transition-all flex items-center justify-center disabled:opacity-20 disabled:cursor-not-allowed"
       >
         <ChevronLeft size={18} className="text-ink" />
@@ -685,7 +757,7 @@ export function BrandPage() {
       <button
         onClick={() => setPageIdx(i => Math.min(i + 1, total - 1))}
         disabled={pageIdx === total - 1}
-        aria-label="Следующий продукт"
+        aria-label={language === 'ua' ? 'Наступний продукт' : 'Next product'}
         className="fixed right-2 top-1/2 -translate-y-1/2 z-30 w-9 h-20 bg-white border border-gray-200 shadow hover:shadow-md hover:bg-lorelle-200 transition-all flex items-center justify-center disabled:opacity-20 disabled:cursor-not-allowed"
       >
         <ChevronRight size={18} className="text-ink" />
@@ -716,12 +788,13 @@ export function BrandPage() {
               {product.nameEn}
             </h2>
             <p className="font-serif text-base text-ink leading-snug mb-4 uppercase tracking-wide">
-              {product.nameRu}
+              {language === 'ua' ? product.nameUa : product.nameRu}
             </p>
-            <p className="mag-body mb-5">{product.description}</p>
+            <p className="text-sm text-gray-500 mb-3 italic">{language === 'ua' ? product.subtitleUa : (language === 'en' ? product.subtitleEn : product.subtitleRu)}</p>
+            <p className="mag-body mb-5">{language === 'ua' ? product.descriptionUa : (language === 'en' ? product.descriptionEn : product.descriptionRu)}</p>
 
             <div className="space-y-3 mb-5">
-              {product.benefits.map((b, i) => (
+              {(language === 'ua' ? product.benefitsUa : (language === 'en' ? product.benefitsEn : product.benefitsRu))?.map((b, i) => (
                 <div key={i} className="border-l-2 border-vt-200 pl-4">
                   <p className="text-[10px] uppercase tracking-widest font-bold text-ink mb-0.5">{b.title}</p>
                   <p className="text-xs text-gray-500 leading-snug">{b.desc}</p>
@@ -738,7 +811,7 @@ export function BrandPage() {
                 <div>
                   <p className="mag-label mb-1">{language === 'ua' ? 'Активні компоненти' : 'Active ingredients'}</p>
                   <div className="space-y-0.5">
-                    {product.ingredients.slice(0, 3).map((ing, i) => (
+                    {(language === 'ua' ? product.ingredientsUa : (language === 'en' ? product.ingredientsEn : product.ingredientsRu))?.slice(0, 3).map((ing, i) => (
                       <p key={i} className="text-gray-600">· {ing}</p>
                     ))}
                   </div>
@@ -746,7 +819,7 @@ export function BrandPage() {
                 <div>
                   <p className="mag-label mb-1">{language === 'ua' ? 'Для якої шкіри' : 'For skin type'}</p>
                   <div className="space-y-0.5">
-                    {product.skinTypes.slice(0, 4).map((st, i) => (
+                    {(language === 'ua' ? product.skinTypesUa : (language === 'en' ? product.skinTypesEn : product.skinTypesRu))?.slice(0, 4).map((st, i) => (
                       <p key={i} className="text-gray-600">✓ {st}</p>
                     ))}
                   </div>

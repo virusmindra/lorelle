@@ -1,7 +1,7 @@
 import React, { useState, Component } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
-import { LanguageProvider } from './context/LanguageContext'
+import { LanguageProvider, useLanguage } from './context/LanguageContext'
 import Checkout from './pages/Checkout'
 import {
   LorelleMasthead,
@@ -28,11 +28,12 @@ class ErrorBoundary extends Component {
 }
 
 function NotFound() {
+  const { language } = useLanguage()
   return (
     <div className="min-h-screen bg-lorelle-100 flex flex-col items-center justify-center text-center px-6">
       <p className="font-display text-9xl text-lorelle-300 leading-none">404</p>
-      <p className="font-display text-3xl text-ink mb-4 uppercase">Страница не найдена</p>
-      <Link to="/" className="btn-primary">На главную</Link>
+      <p className="font-display text-3xl text-ink mb-4 uppercase">{language === 'ua' ? 'Сторінка не знайдена' : 'Page not found'}</p>
+      <Link to="/" className="btn-primary">{language === 'ua' ? 'На головну' : 'Back to home'}</Link>
     </div>
   )
 }
