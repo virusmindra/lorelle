@@ -25,7 +25,7 @@ export const vtProducts = [
     subtitleRu: 'Крем с PDRN для интенсивного увлажнения и повышения упругости',
     volume: '50 мл',
     price: 3200,
-    image: '/images/pdrn-cream-100.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: 'PDRN cream intensively hydrates the skin, helps maintain its elasticity and improves overall appearance. Suitable for daily care.',
     descriptionUa: 'Крем з PDRN інтенсивно зволожує шкіру, допомагає підтримувати її пружність і покращує загальний вигляд. Підходить для щоденного догляду.',
@@ -67,7 +67,7 @@ export const vtProducts = [
     subtitleRu: 'Капсульный крем с PDRN для увлажнения, баланса и упругости',
     volume: '50 мл',
     price: 3600,
-    image: '/images/pdrn-capsule-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: 'Capsule cream with PDRN helps maintain skin hydration, improves its elasticity and contributes to a healthier and glowing appearance.',
     descriptionUa: 'Капсульний крем з PDRN допомагає підтримувати зволоження шкіри, покращує її пружність і сприяє більш здоровому і сяючому вигляду.',
@@ -109,7 +109,7 @@ export const vtProducts = [
     subtitleRu: 'Глубоко очищает поры, не нарушая защитный барьер кожи',
     volume: '50 мл',
     price: 2800,
-    image: '/images/pdrn-cleansing-balm.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: 'Balm with PDRN effectively dissolves makeup and impurities, deeply cleanses pores without disrupting the skin barrier. Leaves skin clean, hydrated and comfortable.',
     descriptionUa: 'Бальзам з PDRN ефективно розчиняє макіяж і забруднення, глибоко очищує пори, не порушуючи захисний бар\'єр шкіри. Залишає шкіру чистою, зволоженою і комфортною.',
@@ -151,7 +151,7 @@ export const vtProducts = [
     subtitleRu: 'Микроиглы стимулируют глубокое обновление кожи',
     volume: '50 мл',
     price: 4500,
-    image: '/images/pdrn-reedle-shot-300.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: '300 soluble bio-needles (spicules) with PDRN and hyaluronic acid penetrate the skin and work as home microneedle therapy. Stimulates collagen synthesis, evens texture and minimizes pores.',
     descriptionUa: '300 розчинних біоігл (спікул) з PDRN і гіалуроновою кислотою проникають у шкіру і працюють як домашня мікроігольна терапія. Стимулює синтез колагену, вирівнює текстуру і зменшує пори.',
@@ -193,7 +193,7 @@ export const vtProducts = [
     subtitleRu: 'С PDRN и мятой для глубокого очищения и увлажнения',
     volume: '70 мл',
     price: 2400,
-    image: '/images/mint-micro-bubble-foam.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: 'Gentle foam with micro-bubbles effectively removes impurities and excess sebum without disrupting the natural skin balance. Gives a feeling of freshness and comfort.',
     descriptionUa: 'М\'яка пенка з мікропухирцями ефективно видаляє забруднення і надлишки себуму, не порушуючи природний баланс шкіри. Дарує відчуття свіжості і комфорту.',
@@ -235,7 +235,7 @@ export const vtProducts = [
     subtitleRu: 'Успокаивает, увлажняет и восстанавливает кожу',
     volume: '30 г',
     price: 2900,
-    image: '/images/pdrn-essence-cica-balm.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: 'Multi-functional essence balm with centella asiatica (Cica) extract and PDRN. Instantly soothes irritated skin, restores barrier and provides long-lasting hydration.',
     descriptionUa: 'Багатофункціональний бальзам-есенція з екстрактом центелли азіатської (Cica) та PDRN. Миттєво заспокоює подразнену шкіру, відновлює бар\'єр і забезпечує тривале зволоження.',
@@ -277,7 +277,7 @@ export const vtProducts = [
     subtitleRu: 'Инновационная сыворотка с микроиглами CICA REEDLE™',
     volume: '50 мл',
     price: 3000,
-    image: '/images/reedle-shot-100.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a5940',
     descriptionEn: 'Innovative serum with CICA REEDLE™ microneedles promotes natural skin renewal, improves its texture, tone and enhances penetration of active ingredients.',
     descriptionUa: 'Інноваційна сироватка з мікроіглами CICA REEDLE™ сприяє природному оновленню шкіри, покращує її текстуру, тон і сприяє кращому проникненню активних компонентів.',
@@ -319,7 +319,7 @@ export const anuaProducts = [
     subtitle: 'Легкий мист с PDRN, гиалуроновой кислотой и увлажняющими капсулами',
     volume: '100 мл',
     price: 2800,
-    image: '/images/anua-capsule-mist.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Легкий мист с PDRN, гиалуроновой кислотой и увлажняющими капсулами мгновенно насыщает кожу влагой, восстанавливает защитный барьер и придает естественное сияние. Освежает кожу в течение дня и помогает предотвратить обезвоживание.',
     benefits: [
@@ -340,7 +340,7 @@ export const anuaProducts = [
     subtitle: 'Легкий тонер с 77% экстракта хауттюйнии для чувствительной кожи',
     volume: '250 мл',
     price: 2600,
-    image: '/images/anua-heartleaf-toner.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Легкий тонер с 77% экстракта хауттюйнии (Heartleaf) интенсивно увлажняет, успокаивает раздраженную кожу и помогает восстановить защитный барьер. Уменьшает покраснения, нормализует баланс кожи и подготавливает ее к последующему уходу.',
     benefits: [
@@ -361,7 +361,7 @@ export const anuaProducts = [
     subtitle: 'Интенсивно увлажняющая тканевая маска с экстрактом риса, церамидами и коллагеном',
     volume: '38 г',
     price: 650,
-    image: '/images/anua-rice-collagen-mask.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Интенсивно увлажняющая тканевая маска с 70% экстракта риса, церамидами и коллагеном глубоко питает кожу, укрепляет защитный барьер и придает ей здоровое сияние. Делает кожу более гладкой, упругой и наполненной влагой уже после первого применения.',
     benefits: [
@@ -382,7 +382,7 @@ export const anuaProducts = [
     subtitle: 'Мягкая пенка с Heartleaf и Quercetinol™ для глубокого очищения пор',
     volume: '150 мл',
     price: 1800,
-    image: '/images/anua-heartleaf-cleansing-foam.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Мягкая очищающая пенка с экстрактом хауттюйнии (Heartleaf) и Quercetinol™ эффективно удаляет загрязнения, излишки себума и остатки макияжа, не нарушая естественный защитный барьер кожи. Очищает поры, успокаивает кожу и оставляет ощущение свежести и комфорта.',
     benefits: [
@@ -403,7 +403,7 @@ export const anuaProducts = [
     subtitle: 'Легкая сыворотка с 70% экстракта персика для сияния и ровного тона',
     volume: '30 мл',
     price: 2400,
-    image: '/images/anua-peach-niacin-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Легкая сыворотка с 70% экстракта персика и ниацинамидом интенсивно увлажняет, выравнивает тон кожи и придает ей естественное сияние. Помогает уменьшить тусклость, улучшает текстуру кожи и делает цвет лица более свежим и ровным.',
     benefits: [
@@ -424,7 +424,7 @@ export const anuaProducts = [
     subtitle: 'Мягкая энзимная пудра для деликатного очищения и сияния кожи',
     volume: '40 г',
     price: 1600,
-    image: '/images/anua-rice-enzyme-powder.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Мягкая энзимная пудра с рисовыми ферментами и церамидами бережно очищает кожу, удаляет загрязнения и омертвевшие клетки, не нарушая естественный защитный барьер. Осветляет тон кожи, делает ее более гладкой, мягкой и сияющей.',
     benefits: [
@@ -445,7 +445,7 @@ export const anuaProducts = [
     subtitle: 'Тонер-пэды с PDRN и гиалуроновой кислотой для увлажнения и сияния',
     volume: '60 пэдов (180 мл)',
     price: 2200,
-    image: '/images/anua-pdrn-glow-pad.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Тонер-пэды с PDRN и гиалуроновой кислотой интенсивно увлажняют, восстанавливают защитный барьер кожи и придают ей естественное сияние. Мягко освежают, улучшают текстуру и подготавливают кожу к последующему уходу.',
     benefits: [
@@ -466,7 +466,7 @@ export const anuaProducts = [
     subtitle: 'Легкая сыворотка с экстрактом риса и церамидами для укрепления барьера',
     volume: '50 мл',
     price: 2500,
-    image: '/images/anua-rice-ceramide-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Легкая сыворотка с экстрактом риса и церамидами интенсивно увлажняет кожу, укрепляет защитный барьер и помогает сохранить влагу. Делает кожу более гладкой, мягкой и сияющей, уменьшая ощущение сухости и повышая эластичность.',
     benefits: [
@@ -487,7 +487,7 @@ export const anuaProducts = [
     subtitle: 'Интенсивно увлажняющий крем с PDRN для восстановления и упругости кожи',
     volume: '60 мл',
     price: 3200,
-    image: '/images/anua-pdrn-moisturizing-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#1a6b6b',
     description: 'Интенсивно увлажняющий крем с PDRN и гиалуроновой кислотой помогает восстановить защитный барьер кожи, удерживает влагу и повышает упругость. Делает кожу более гладкой, мягкой и сияющей.',
     benefits: [
@@ -511,7 +511,7 @@ export const medicubeProducts = [
     subtitle: 'Интенсивная сыворотка с PDRN, розмарином и кофеином для укрепления волос',
     volume: '20 мл',
     price: 2900,
-    image: '/images/medicube-rosemary-scalp-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Интенсивная сыворотка с PDRN, экстрактом розмарина и кофеином укрепляет волосы, поддерживает здоровье кожи головы и способствует росту более сильных и густых волос.',
     benefits: [
@@ -532,7 +532,7 @@ export const medicubeProducts = [
     subtitle: 'Питательный кондиционер с PDRN и розмарином для укрепления и блеска волос',
     volume: '250 мл',
     price: 2400,
-    image: '/images/medicube-rosemary-conditioner.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Питательный кондиционер с PDRN и экстрактом розмарина интенсивно увлажняет волосы, укрепляет их по всей длине и заботится о коже головы. Делает волосы более мягкими, гладкими и сильными, облегчая расчесывание без утяжеления.',
     benefits: [
@@ -553,7 +553,7 @@ export const medicubeProducts = [
     subtitle: 'Шампунь с PDRN, розмарином и кофеином для объема и укрепления волос',
     volume: '400 мл',
     price: 2600,
-    image: '/images/medicube-rosemary-shampoo.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Шампунь с PDRN, розмарином и кофеином бережно очищает кожу головы, укрепляет волосы, помогает сохранить их густоту и придает естественный объем. Освежает, успокаивает кожу головы и подходит для ежедневного ухода.',
     benefits: [
@@ -574,7 +574,7 @@ export const medicubeProducts = [
     subtitle: 'Легкий желейный крем с коллагеном для упругости и сияния кожи',
     volume: '110 мл',
     price: 2800,
-    image: '/images/medicube-collagen-jelly-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Легкий желейный крем с коллагеном интенсивно увлажняет кожу, повышает ее упругость и помогает сохранить естественное сияние. Делает кожу более гладкой, мягкой и эластичной.',
     benefits: [
@@ -595,7 +595,7 @@ export const medicubeProducts = [
     subtitle: 'Инновационный аппарат для домашнего ухода — лифтинг, сияние и усиление косметики',
     volume: 'Девайс + USB-кабель',
     price: 12900,
-    image: '/images/medicube-age-r-booster-pro.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Инновационный аппарат для домашнего ухода помогает повысить эффективность косметических средств, улучшить упругость кожи, сделать контуры лица более четкими и вернуть коже здоровое сияние.',
     benefits: [
@@ -616,7 +616,7 @@ export const medicubeProducts = [
     subtitle: 'Крем с койевой кислотой, куркумой и ниацинамидом для ровного тона и сияния',
     volume: '53 г',
     price: 2700,
-    image: '/images/medicube-kojic-turmeric-capsule-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Крем с койевой кислотой, куркумой и ниацинамидом помогает уменьшить пигментацию, выровнять тон кожи и вернуть ей естественное сияние. Интенсивно увлажняет, смягчает и делает кожу более гладкой.',
     benefits: [
@@ -637,7 +637,7 @@ export const medicubeProducts = [
     subtitle: 'Легкая сыворотка с экзосомами и центеллой для успокоения и восстановления кожи',
     volume: '30 мл',
     price: 3100,
-    image: '/images/medicube-exosome-cica-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Легкая сыворотка с экзосомами, центеллой и чайным деревом успокаивает кожу, уменьшает покраснения, укрепляет защитный барьер и поддерживает оптимальный уровень увлажнения.',
     benefits: [
@@ -658,7 +658,7 @@ export const medicubeProducts = [
     subtitle: 'Двухфазная сыворотка-мист с койевой кислотой, куркумой и витамином С',
     volume: '100 мл',
     price: 2500,
-    image: '/images/medicube-kojic-turmeric-jelly-mist.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Легкая двухфазная сыворотка-мист с койевой кислотой, куркумой и витамином С увлажняет кожу, помогает выровнять тон и придает ей естественное сияние. Быстро освежает и не оставляет липкости.',
     benefits: [
@@ -679,7 +679,7 @@ export const medicubeProducts = [
     subtitle: 'Мягкая пенка с азелаиновой кислотой и ниацинамидом для проблемной кожи',
     volume: '120 г',
     price: 1900,
-    image: '/images/medicube-azelaic-foam-cleanser.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Мягкая пенка с азелаиновой кислотой и ниацинамидом эффективно очищает кожу, удаляет загрязнения и излишки себума, не нарушая защитный барьер. Освежает и делает кожу более гладкой.',
     benefits: [
@@ -700,7 +700,7 @@ export const medicubeProducts = [
     subtitle: 'Освежающий тонер с 4% азелаиновой кислотой и ниацинамидом',
     volume: '250 мл',
     price: 2100,
-    image: '/images/medicube-azelaic-clear-toner.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Освежающий тонер с 4% азелаиновой кислотой и ниацинамидом помогает уменьшить несовершенства, контролирует выработку себума и выравнивает тон кожи. Увлажняет, успокаивает и подготавливает кожу к последующему уходу.',
     benefits: [
@@ -721,7 +721,7 @@ export const medicubeProducts = [
     subtitle: 'Интенсивный пилинг для тела с комплексом кислот AHA, BHA, PHA и LHA',
     volume: '110 мл',
     price: 2900,
-    image: '/images/medicube-red-acne-body-peeling-shot.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#b05a7a',
     description: 'Интенсивный пилинг для тела с комплексом кислот AHA, BHA, PHA и LHA помогает бороться с высыпаниями, устраняет шероховатость кожи и выравнивает ее текстуру. Делает кожу более гладкой, чистой и обновленной.',
     benefits: [
@@ -745,7 +745,7 @@ export const centellaProducts = [
     subtitle: 'Легендарная сыворотка SKIN1004 с экстрактом центеллы азиатской с Мадагаскара',
     volume: '100 мл',
     price: 2200,
-    image: '/images/skin1004-madagascar-centella-ampoule.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Легендарная сыворотка SKIN1004 с экстрактом центеллы азиатской с Мадагаскара интенсивно успокаивает кожу, восстанавливает защитный барьер, глубоко увлажняет и помогает уменьшить покраснения. Легкая текстура быстро впитывается, не оставляя липкости, дарит ощущение свежести и комфорта.',
     benefits: [
@@ -765,7 +765,7 @@ export const centellaProducts = [
     subtitle: 'Мягкая очищающая пенка SKIN1004 с экстрактом центеллы азиатской с Мадагаскара',
     volume: '125 мл',
     price: 1900,
-    image: '/images/skin1004-madagascar-centella-ampoule-foam.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Мягкая очищающая пенка SKIN1004 с экстрактом центеллы азиатской с Мадагаскара эффективно удаляет загрязнения, остатки макияжа и излишки себума, не нарушая естественный защитный барьер кожи. Кремовая пена глубоко очищает поры, успокаивает раздражение и помогает сохранить кожу увлажненной после умывания. Подходит для ежедневного использования и дарит ощущение свежести, чистоты и комфорта.',
     benefits: [
@@ -785,7 +785,7 @@ export const centellaProducts = [
     subtitle: 'Легкое гидрофильное масло SKIN1004 с экстрактом центеллы азиатской с Мадагаскара',
     volume: '200 мл',
     price: 2000,
-    image: '/images/skin1004-madagascar-centella-light-cleansing-oil.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Легкое гидрофильное масло SKIN1004 с экстрактом центеллы азиатской с Мадагаскара эффективно растворяет макияж, солнцезащитные средства, излишки себума и ежедневные загрязнения. При контакте с водой превращается в нежную эмульсию, легко смывается, не оставляя жирной пленки. Бережно очищает кожу, поддерживает ее защитный барьер и сохраняет ощущение увлажненности и комфорта после умывания.',
     benefits: [
@@ -805,7 +805,7 @@ export const centellaProducts = [
     subtitle: 'Тонер SKIN1004 с экстрактом центеллы азиатской с Мадагаскара',
     volume: '210 мл',
     price: 1800,
-    image: '/images/skin1004-madagascar-centella-toning-toner.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Тонер SKIN1004 с экстрактом центеллы азиатской с Мадагаскара интенсивно увлажняет, успокаивает кожу и восстанавливает комфорт после очищения. Легкая текстура быстро впитывается, устраняет ощущение стянутости, поддерживает естественный pH-баланс и подготавливает кожу к последующим этапам ухода, делая ее более мягкой, гладкой и свежей.',
     benefits: [
@@ -825,7 +825,7 @@ export const centellaProducts = [
     subtitle: 'Крем SKIN1004 Madagascar Centella Soothing Cream для интенсивного увлажнения и восстановления',
     volume: '75 мл',
     price: 2400,
-    image: '/images/skin1004-madagascar-centella-soothing-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Крем SKIN1004 Madagascar Centella Soothing Cream обеспечивает интенсивное увлажнение, помогает восстановить защитный барьер кожи и уменьшает признаки чувствительности. Формула с экстрактом центеллы азиатской успокаивает раздражения, снимает покраснения и поддерживает естественные процессы регенерации. Легкая кремовая текстура быстро впитывается, не оставляет липкости и дарит ощущение комфорта в течение всего дня. При регулярном использовании кожа становится более мягкой, гладкой, упругой и приобретает здоровое естественное сияние.',
     benefits: [
@@ -845,7 +845,7 @@ export const centellaProducts = [
     subtitle: 'Пэды SKIN1004 Madagascar Centella Quick Calming Pad для быстрого увлажнения и успокоения',
     volume: '70 пэдов',
     price: 2100,
-    image: '/images/skin1004-madagascar-centella-quick-calming-pad.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Пэды SKIN1004 Madagascar Centella Quick Calming Pad обеспечивают быстрое увлажнение, успокаивают чувствительную кожу и помогают уменьшить покраснения уже после первого применения. Пропитанные эссенцией с экстрактом центеллы азиатской, они восстанавливают защитный барьер, поддерживают естественный уровень увлажнения и дарят ощущение свежести и комфорта. Мягкая формула подходит для ежедневного ухода, не пересушивает кожу и помогает подготовить ее к нанесению последующих средств. Пэды можно использовать как тонизирующий этап ухода или в качестве локальной успокаивающей маски на участках с раздражением. Кожа становится более гладкой, увлажненной, свежей и приобретает здоровое естественное сияние.',
     benefits: [
@@ -865,7 +865,7 @@ export const centellaProducts = [
     subtitle: 'Концентрированная сыворотка с ферментированной центеллой и комплексом Probio-Cica',
     volume: '50 мл',
     price: 2600,
-    image: '/images/skin1004-madagascar-centella-probio-cica-intensive-ampoule.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Концентрированная сыворотка с ферментированной центеллой и комплексом Probio-Cica интенсивно успокаивает кожу, укрепляет защитный барьер и помогает восстановить комфорт даже при повышенной чувствительности. Глубоко увлажняет, уменьшает ощущение сухости и стянутости, повышает упругость, улучшает текстуру кожи и придает ей здоровое сияние.',
     benefits: [
@@ -886,7 +886,7 @@ export const centellaProducts = [
     subtitle: 'Мягкая гель-пенка с экстрактом центеллы Мадагаскара для очищения и осветления',
     volume: '125 мл',
     price: 2000,
-    image: '/images/skin1004-madagascar-centella-tone-brightening-cleansing-gel-foam.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Мягкая гель-пенка с экстрактом центеллы Мадагаскара эффективно очищает кожу от загрязнений, излишков себума и остатков макияжа, не нарушая естественный защитный барьер. Формула с ниацинамидом и запатентованным комплексом MadeWhite™️ помогает выравнивать тон кожи, уменьшать тусклость и придавать лицу здоровое сияние. Средство успокаивает чувствительную кожу, поддерживает оптимальный уровень увлажнения и оставляет ощущение свежести и комфорта после каждого умывания.',
     benefits: [
@@ -907,7 +907,7 @@ export const centellaProducts = [
     subtitle: 'Тонер с экстрактом центеллы Мадагаскара для увлажнения и выравнивания тона',
     volume: '210 мл',
     price: 1900,
-    image: '/images/skin1004-madagascar-centella-tone-brightening-boosting-toner.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Тонер с экстрактом центеллы Мадагаскара, ниацинамидом и запатентованным комплексом MadeWhite™️ интенсивно увлажняет, успокаивает и помогает выровнять тон кожи. Эффективно устраняет ощущение сухости после умывания, восстанавливает гидролипидный баланс и подготавливает кожу к последующим этапам ухода. При регулярном использовании уменьшает тусклость, делает кожу более гладкой, свежей и сияющей, поддерживая ее естественный защитный барьер. Легкая текстура быстро впитывается, не оставляя липкости и обеспечивая длительное ощущение комфорта.',
     benefits: [
@@ -928,7 +928,7 @@ export const centellaProducts = [
     subtitle: 'Сыворотка с микрокапсулами, экстрактом центеллы Мадагаскара для выравнивания тона',
     volume: '100 мл',
     price: 2300,
-    image: '/images/skin1004-madagascar-centella-tone-brightening-capsule-ampoule.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Сыворотка с микрокапсулами, экстрактом центеллы Мадагаскара, ниацинамидом и мадекассозидом помогает выровнять тон кожи, уменьшить выраженность пигментации и следов постакне. Легкая текстура быстро впитывается, интенсивно увлажняет и успокаивает кожу, не оставляя липкости. Формула поддерживает естественный защитный барьер, повышает эластичность и придает лицу здоровое сияние. При регулярном использовании кожа становится более гладкой, свежей и заметно более ровной.',
     benefits: [
@@ -949,7 +949,7 @@ export const centellaProducts = [
     subtitle: 'Крем с микрокапсулами, экстрактом центеллы Мадагаскара для выравнивания тона',
     volume: '75 мл',
     price: 2500,
-    image: '/images/skin1004-madagascar-centella-tone-brightening-capsule-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Крем с микрокапсулами, экстрактом центеллы Мадагаскара, ниацинамидом и мадекассозидом помогает выровнять тон кожи, уменьшить выраженность пигментации и следов постакне. Активные капсулы растворяются при нанесении, насыщая кожу полезными компонентами, которые интенсивно увлажняют, успокаивают и укрепляют защитный барьер. Легкая кремовая текстура быстро впитывается, не оставляя липкости, делая кожу более гладкой, упругой и сияющей. При регулярном использовании цвет лица становится ровнее, а кожа выглядит здоровой и ухоженной.',
     benefits: [
@@ -970,7 +970,7 @@ export const centellaProducts = [
     subtitle: 'Солнцезащитный крем с экстрактом центеллы Мадагаскара для защиты и осветления',
     volume: '50 мл',
     price: 2200,
-    image: '/images/skin1004-madagascar-centella-tone-brightening-tone-up-sunscreen.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Солнцезащитный крем с экстрактом центеллы Мадагаскара, ниацинамидом и транексамовой кислотой обеспечивает надежную защиту от UVA- и UVB-лучей, выравнивает тон кожи и придает ей естественное сияние. Легкая текстура комфортно распределяется, быстро впитывается и создает мягкий tone-up эффект без ощущения тяжести и липкости. Формула успокаивает кожу, помогает уменьшить пигментацию, поддерживает оптимальный уровень увлажнения и защищает от фотостарения, сохраняя кожу гладкой, свежей и ухоженной в течение дня.',
     benefits: [
@@ -991,7 +991,7 @@ export const centellaProducts = [
     subtitle: 'Локальный крем с экстрактом центеллы азиатской и комплексом Tea-Trica',
     volume: '20 мл',
     price: 1700,
-    image: '/images/skin1004-madagascar-centella-tea-trica-spot-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Локальный крем с экстрактом центеллы азиатской и комплексом Tea-Trica создан для быстрого ухода за воспалениями и несовершенствами кожи. Средство помогает уменьшить покраснения, поддерживает естественное восстановление кожи и укрепляет ее защитный барьер. Легкая текстура быстро впитывается, не оставляет липкости и подходит для ежедневного точечного применения.',
     benefits: [
@@ -1011,7 +1011,7 @@ export const centellaProducts = [
     subtitle: 'Очищающий тонер с экстрактом центеллы азиатской и комплексом Tea-Trica',
     volume: '210 мл',
     price: 1800,
-    image: '/images/skin1004-madagascar-centella-tea-trica-purifying-toner.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Очищающий тонер с экстрактом центеллы азиатской и комплексом Tea-Trica мягко удаляет остатки загрязнений, излишки себума и подготавливает кожу к последующим этапам ухода. Формула с центеллой и экстрактом чайного дерева помогает уменьшить покраснения, поддерживает естественный баланс кожи и способствует снижению воспалений, сохраняя ощущение свежести и комфорта.',
     benefits: [
@@ -1031,7 +1031,7 @@ export const centellaProducts = [
     subtitle: 'Сыворотка с экстрактом центеллы азиатской и комплексом Tea-Trica',
     volume: '30 мл',
     price: 1900,
-    image: '/images/skin1004-madagascar-centella-tea-trica-relief-ampoule.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Сыворотка с экстрактом центеллы азиатской и комплексом Tea-Trica разработана для ухода за проблемной и чувствительной кожей. Легкая формула помогает уменьшить покраснения, поддерживает естественное восстановление кожи и способствует снижению воспалений. Быстро впитывается, не оставляет липкости, интенсивно увлажняет и укрепляет защитный барьер, сохраняя ощущение свежести и комфорта.',
     benefits: [
@@ -1051,7 +1051,7 @@ export const centellaProducts = [
     subtitle: 'Мягкая очищающая пенка с экстрактом центеллы азиатской, комплексом Tea-Trica и BHA-кислотой',
     volume: '125 мл',
     price: 1900,
-    image: '/images/skin1004-madagascar-centella-tea-trica-bha-foam.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Мягкая очищающая пенка с экстрактом центеллы азиатской, комплексом Tea-Trica и BHA-кислотой эффективно удаляет загрязнения, излишки себума и остатки макияжа, не нарушая естественный защитный барьер кожи. Кремовая текстура образует густую нежную пену, которая глубоко очищает поры, способствует уменьшению черных точек и предотвращает появление новых несовершенств. После умывания кожа остается свежей, гладкой и увлажненной без ощущения сухости и стянутости.',
     benefits: [
@@ -1071,7 +1071,7 @@ export const centellaProducts = [
     subtitle: 'Тканевая маска с экстрактом центеллы азиатской и комплексом Tea-Trica',
     volume: '24 мл',
     price: 800,
-    image: '/images/skin1004-madagascar-centella-tea-trica-relaxing-mask.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#4a7c59',
     description: 'Тканевая маска с экстрактом центеллы азиатской и комплексом Tea-Trica обеспечивает интенсивный уход за чувствительной и проблемной кожей. Формула помогает уменьшить покраснения, успокаивает раздражения, глубоко увлажняет и способствует восстановлению защитного барьера кожи. Мягкая тканевая основа плотно прилегает к лицу, обеспечивая эффективное проникновение активных компонентов и даря ощущение свежести и комфорта уже после первого применения.',
     benefits: [
@@ -1094,7 +1094,7 @@ export const finoProducts = [
     subtitle: 'Интенсивный шампунь с ухаживающей формулой Beauty Serum',
     volume: '550 мл',
     price: 1800,
-    image: '/images/fino-premium-touch-shampoo.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#8b7355',
     description: 'Интенсивный шампунь с ухаживающей формулой Beauty Serum эффективно очищает волосы и кожу головы, удаляя загрязнения и излишки себума без пересушивания. Делает волосы мягкими, гладкими и блестящими, облегчает расчесывание и помогает сохранить их естественную красоту.',
     benefits: [
@@ -1136,7 +1136,7 @@ export const finoProducts = [
     subtitle: 'Легкое масло с ухаживающей формулой Beauty Serum для питания и блеска волос',
     volume: '70 мл',
     price: 1900,
-    image: '/images/fino-premium-touch-hair-oil.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#8b7355',
     description: 'Легкое масло с ухаживающей формулой Beauty Serum глубоко питает волосы, восстанавливает их гладкость и придает роскошный блеск без эффекта жирности. Помогает уменьшить пушистость, защищает от сухости и делает волосы шелковистыми, мягкими и ухоженными.',
     benefits: [
@@ -1157,7 +1157,7 @@ export const finoProducts = [
     subtitle: 'Интенсивная маска с формулой Beauty Serum для глубокого восстановления волос',
     volume: '230 г',
     price: 2100,
-    image: '/images/fino-premium-touch-hair-mask.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#8b7355',
     description: 'Интенсивная маска с формулой Beauty Serum глубоко питает и увлажняет волосы, помогая вернуть им силу, гладкость и естественный блеск. Восстанавливает поврежденную структуру, уменьшает ломкость и делает волосы шелковистыми уже после первого применения.',
     benefits: [
@@ -1178,7 +1178,7 @@ export const finoProducts = [
     subtitle: 'Невесомая масло-сыворотка с ухаживающей формулой Beauty Serum',
     volume: '70 мл',
     price: 2000,
-    image: '/images/fino-premium-touch-hair-oil-serum-airy-smooth.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#8b7355',
     description: 'Невесомая масло-сыворотка с ухаживающей формулой Beauty Serum интенсивно питает волосы, придает гладкость и естественный блеск без утяжеления. Помогает устранить пушистость, защищает от сухости и делает волосы мягкими, шелковистыми и послушными.',
     benefits: [
@@ -1202,7 +1202,7 @@ export const maryMayProducts = [
     subtitle: 'Солнцезащитный стик с бакучиолом и комплексом пептидов SPF50+ PA++++',
     volume: '18 г',
     price: 2300,
-    image: '/images/mary-may-bakuchiol-sun-stick.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Солнцезащитный стик с бакучиолом и комплексом пептидов надежно защищает от UVA- и UVB-лучей, увлажняет кожу и помогает сохранить ее упругость.',
     benefits: [
@@ -1223,7 +1223,7 @@ export const maryMayProducts = [
     subtitle: 'Крем с 1 000 ppm спикул, коллагеном и PDRN для обновления и упругости кожи',
     volume: '20 мл',
     price: 2700,
-    image: '/images/mary-may-spicule-collagen-pdrn-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Крем с 1 000 ppm спикул, коллагеном и PDRN способствует обновлению кожи, повышает упругость, улучшает текстуру и придает здоровое сияние.',
     benefits: [
@@ -1244,7 +1244,7 @@ export const maryMayProducts = [
     subtitle: 'Точечный крем с 3 000 ppm спикул, азелаиновой кислотой и PDRN',
     volume: '20 мл',
     price: 2600,
-    image: '/images/mary-may-spicule-azelaic-pdrn-spot-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Крем с 3 000 ppm спикул, азелаиновой кислотой и PDRN помогает уменьшить воспаления, ускоряет восстановление кожи и выравнивает ее текстуру.',
     benefits: [
@@ -1265,7 +1265,7 @@ export const maryMayProducts = [
     subtitle: 'Крем с 2 000 ppm спикул, ретинолом и PDRN для обновления и упругости кожи',
     volume: '20 мл',
     price: 2800,
-    image: '/images/mary-may-spicule-retinol-pdrn-cream.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Крем с 2 000 ppm спикул, ретинолом и PDRN способствует обновлению кожи, повышает упругость, разглаживает морщины и улучшает текстуру.',
     benefits: [
@@ -1286,7 +1286,7 @@ export const maryMayProducts = [
     subtitle: 'Гидрофильное масло с рисом, глутатионом и LHA для сияющей и чистой кожи',
     volume: '200 мл',
     price: 2200,
-    image: '/images/mary-may-rice-glutathione-cleansing-oil.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Масло с рисом, глутатионом и LHA эффективно удаляет макияж, SPF и загрязнения, очищает поры, сохраняя кожу мягкой, увлажненной и сияющей.',
     benefits: [
@@ -1307,7 +1307,7 @@ export const maryMayProducts = [
     subtitle: 'Сыворотка с идебеноном и комплексом ежевики для защиты и упругости кожи',
     volume: '30 мл',
     price: 2500,
-    image: '/images/mary-may-idebenone-blackberry-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Сыворотка с идебеноном и комплексом ежевики помогает защитить кожу от окислительного стресса, повышает упругость, разглаживает кожу и возвращает ей здоровое сияние.',
     benefits: [
@@ -1328,7 +1328,7 @@ export const maryMayProducts = [
     subtitle: 'Сыворотка с ретинолом 0.1%, бакучиолом и CICA для обновления и упругости кожи',
     volume: '30 мл',
     price: 2600,
-    image: '/images/mary-may-seoul-retinol-bakuchiol-cica-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Сыворотка с ретинолом 0.1%, бакучиолом и CICA помогает уменьшить морщины, улучшает упругость кожи, выравнивает текстуру и успокаивает чувствительную кожу.',
     benefits: [
@@ -1349,7 +1349,7 @@ export const maryMayProducts = [
     subtitle: 'Сыворотка с комплексом из 6 пептидов для упругости и сияния кожи',
     volume: '30 мл',
     price: 2400,
-    image: '/images/mary-may-6-peptide-complex-serum.jpg',
+    image: '/images/fino-premium-touch-conditioner.jpg',
     accentColor: '#6b5b95',
     description: 'Сыворотка с комплексом из 6 пептидов помогает повысить упругость кожи, уменьшить признаки старения, интенсивно увлажняет и делает кожу более гладкой и сияющей.',
     benefits: [
