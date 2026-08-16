@@ -787,9 +787,11 @@ export function BrandPage() {
             <h2 className="font-display text-5xl md:text-6xl text-vt-700 leading-none mb-2 uppercase">
               {product.nameEn}
             </h2>
-            <p className="font-serif text-base text-ink leading-snug mb-4 uppercase tracking-wide">
-              {language === 'ua' ? product.nameUa : product.nameRu}
-            </p>
+            {language === 'ua' && (
+              <p className="font-serif text-base text-ink leading-snug mb-4 uppercase tracking-wide">
+                {product.nameUa}
+              </p>
+            )}
             <p className="text-sm text-gray-500 mb-3 italic">{language === 'ua' ? product.subtitleUa : (language === 'en' ? product.subtitleEn : product.subtitleRu)}</p>
             <p className="mag-body mb-5">{language === 'ua' ? product.descriptionUa : (language === 'en' ? product.descriptionEn : product.descriptionRu)}</p>
 
